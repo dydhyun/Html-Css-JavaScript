@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블의 구조를 잡아주는 thead, tbody, tfoot.</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: yellowgreen;
+        }
+        tfoot{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>
+            데브옵스 과정 현황
+        </caption>
+
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>신청인원</th>
+                <th>재적인원</th>
+                <th>현재인원</th>
+            </tr>
+        </thead>
+
+        <tbody> <!-- (tr>th+td*3)*4 -->
+            <tr>
+                <th>9기</th>
+                <td>27명</td>
+                <td>2명</td>
+                <td>25명</td>
+            </tr>
+            <tr>
+                <th>10기</th>
+                <td>28명</td>
+                <td>1명</td>
+                <td>27명</td>
+            </tr>
+            <tr>
+                <th>11기</th>
+                <td>29명</td>
+                <td>1명</td>
+                <td>28명</td>
+            </tr>
+            <tr>
+                <th>12기</th>
+                <td>29명</td>
+                <td>1명</td>
+                <td>28명</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>합계</th>
+                <td>113명</td>
+                <td>5명</td>
+                <td>108명</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html>

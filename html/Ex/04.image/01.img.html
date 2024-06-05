@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지를 표출하는 img 태그</title>
+</head>
+<body>
+    <div>
+        <!-- widt, height 속성을 지정 하지 않으면 이미지 원본크기 그대로 표출 -->
+        <h1>이미지 원본 크기 그대로 표출</h1>
+        <h3>상위 경로에 있는 이미지 표출</h3>
+        <!-- img 태그의 src 속성 : 표출할 이미지의 경로를 지정 -->
+        <!-- alt 속성: 시각 장에인을 위한 이미지를 설명하는 대체텍스트를 넣어줌
+                웹 표준에 의해 필수로 입력돼야 하는 속성. -->
+        <!-- 상위 경로로 접근 할 때는 ../ 를 사용한다. -->
+        <img src="../../images/bit.png" alt="비트캠프 로고">
+        
+        <h3>같은 경로에 있는 이미지 표출</h3>
+        <!-- 이미지 파일이 html 웹 문서와 같은 폴더에 있으면
+                파일명 으로 경로 지정 -->
+        <img src="bit.png" alt="비트캠프 로고">
+        
+        <h3>같은 경로의 다른 폴더 안에 있는 이미지 표출</h3>
+        <!-- 이미지 파일이 같은 경로에 다른 폴더 안에 있으면
+                다른 폴더명/파일명 으로 경로 지정 -->
+        <img src="images/bit.png" alt="비트캠프 로고">
+
+    </div>
+    <hr>
+    <div>
+        <h1>지정된 크기로 이미지 표출</h1>
+        <!-- width, height 속성으로 이미지의 표출 크기를 지정할 수 있다. -->
+        <img src="bit.png" alt="비트캠프 로고" width="50px" height="50px">
+
+    </div>
+    <hr>
+    <div>
+        <h1>웹에 있는 이미지 파일 표출</h1>
+        <!-- 웹에 존재하는 이미지 파일은 이미지 url을 src속성값으로 지정해서 표출할 수 있다. -->
+        <img src="https://mml.pstatic.net/www/mobile/edit/20240531_1095/upload_1717122329139yitVS.gif" alt="환경의 날 네이버 로고">
+    </div>
+</body>
+</html>

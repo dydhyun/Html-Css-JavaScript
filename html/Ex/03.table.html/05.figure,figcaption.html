@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표에 설명을 붙여주는 figure, figcaption태그 -
+         figure태그로 table감싸고, figcaption 태그를 table 태그의 자식으로 선언.</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+<body>
+    <figure>
+        <table>
+            <figcaption>
+                <!--figcaption 태그도 태그안에 다른 태그를 선언해서
+                각각의 스타일을 별도로 지정할 수 있다.
+                caption태그는 자동 중앙정렬 , figcaption태그는 정렬x-->
+                <b style="color: red; border: 1px dotted gray;">Frontend Framework</b> 
+                <p>요새 자주 사용되는 SPA Framework</p>
+            </figcaption>
+
+            <tr>
+                <th>언어</th>
+                <th>개발회사</th>
+                <th>배포년도</th>
+            </tr>
+
+            <tr>
+                <td>React</td>
+                <td>메타 (구 페이스북)</td>
+                <td>2013</td>
+            </tr>
+
+            <tr>
+                <td>Vue</td>
+                <td>MIT</td>
+                <td>2021</td>
+            </tr>
+
+        </table>
+    </figure>
+</body>
+</html>
