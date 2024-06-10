@@ -1,0 +1,27 @@
+/*
+ 그룹 선택자는 두 개 이상의 태그에 동일한 스타일을
+ 지정하고 싶을 때 사용하는 선택자.
+ , 로 여러개의 선택자를 묶어서 스타일을 지정한다.
+*/
+
+h1, h2{
+    color: orange;
+    text-decoration: underline;
+}
+
+.bluetxt, .greentxt, #green{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+div, .redtxt{
+    color: red;
+}
+
+.greentxt, #green{
+    color: green;
+}
+
+.bluetxt{
+    color: blue;
+}

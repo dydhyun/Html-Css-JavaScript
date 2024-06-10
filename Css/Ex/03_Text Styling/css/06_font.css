@@ -1,0 +1,26 @@
+/*
+ font 속성: font 관련 스타일을 한 번에 정의할 수 있는 속성
+*/
+
+.txt1{
+    font:italic 700 15px/30px 굴림;
+}
+
+.txt2{
+    font:small-caps 900 30px/40px 돋움;
+}
+
+
+/*
+ font 관련 스타일이 미리 지정되어 있는 키워드로도 font 속성을 지정할 수 있다.
+*/
+
+.cap{
+    font:caption;
+}
+.icon{
+    font: icon;
+}
+.menu{
+    font: menu;
+}

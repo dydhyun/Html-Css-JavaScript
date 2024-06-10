@@ -1,0 +1,29 @@
+/*
+ text-decoration 속성 : 텍스트에 밑줄, 윗줄 또는 중간에 취소선을 그어주는 속성
+*/
+
+h1{
+    text-decoration: underline;
+}
+
+h2{
+    text-decoration: overline;
+}
+
+.txt{
+    color: blue;
+}
+
+.cancel{
+    color: red;
+    text-decoration: line-through;
+}
+
+
+/*
+ a 태그는 링크에 기본적인 밑줄이 들어가 있는데,
+ text-decoration 속성을 이용하여 기본 밑줄을 없앨 수 있다.
+*/
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,23 @@
+/*
+ 아이디 선택자는 한 웹 문서에 유일한 아이디 값을 이용해서
+ 스타일을 적용하는 선택자. # 을 사용한다.
+*/
+
+#title{
+    text-decoration: underline;
+}
+
+#content1{
+    color: red;
+    font-size: 15px;
+}
+
+#content2{
+    color: blue;
+    font-size: 20px;
+}
+
+#content3{
+    color: green;
+    font-size: 25px;
+}

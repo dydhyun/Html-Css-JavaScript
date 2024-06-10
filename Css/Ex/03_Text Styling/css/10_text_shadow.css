@@ -1,0 +1,31 @@
+/*
+ text-shadow 속성 : 텍스트에 그림자를 추가하는 속성
+*/
+h1{
+    font-size: 100px;
+    font-family: 'Arial Rounded MT';
+}
+
+.shadow1{
+    color: orange;
+    text-shadow: 1px 1px black;
+}
+
+
+.shadow2{
+    color: orangered;
+    text-shadow: 5px 5px 3px red;
+}
+
+
+.shadow3{
+    color: beige;
+    text-shadow: -7px -7px 5px black;
+}
+
+.shadow4{
+    /* 여러가지 그림자를 , 로 묶어서 지정 */
+    color: black;
+    text-shadow: 0px 0px 4px #ccc, 0px -5px 4px #ff3,
+     -2px -15px 11px #08f, 2px -19px 18px red;
+}

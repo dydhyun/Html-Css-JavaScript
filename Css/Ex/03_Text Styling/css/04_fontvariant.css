@@ -1,0 +1,23 @@
+#content1{
+    font-weight: bold;
+}
+
+#content2{
+    font-weight: bolder;
+}
+
+#content3{
+    font-weight: lighter;
+}
+
+#content4{
+    font-weight: 900;
+}
+
+#content5{
+    font-weight: 100;
+}
+li{
+    /*작은(소문자 크기) 대문자로 표시*/
+    font-variant: small-caps;
+}

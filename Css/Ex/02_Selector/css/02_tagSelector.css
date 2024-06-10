@@ -1,0 +1,18 @@
+/*
+ 태그 선택자는 특정 태그에 동일한 스타일을 지정할 때
+ 주로 사용되는 선택자 
+ */
+ h1{
+    color: skyblue;
+    font-size: 32px;
+    border: 1px solid green;
+ }
+
+ul{
+    color:coral;
+}
+
+li{
+    font-size: 15px;
+    font-weight: bold;
+}

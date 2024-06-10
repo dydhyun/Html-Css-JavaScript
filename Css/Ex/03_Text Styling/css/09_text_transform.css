@@ -1,0 +1,15 @@
+/*
+ text-transform 속성 : 영문자를 대/소문자로 변환하는 속성
+*/
+
+.lower{
+    text-transform: lowercase;
+}
+
+.upper{
+    text-transform: uppercase;
+}
+
+.capital{
+    text-transform: capitalize;
+}

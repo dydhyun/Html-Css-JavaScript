@@ -1,0 +1,16 @@
+/*
+ text-indent 속성 : 들여쓰기 크기를 지정하는 속성
+*/
+p{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 15px;
+}
+
+.ind1{
+    text-indent: 15px;
+}
+
+.ind2{
+    text-indent: 5%;
+}

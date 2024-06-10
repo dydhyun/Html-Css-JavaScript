@@ -1,0 +1,13 @@
+/*
+ direction 속성 : 텍스트의 화면 표시 방향을 설정할 수 있는 속성!
+ ltr : left to right 왼쪽에서 오른쪽으로 텍스트 표시, 기본값
+ rtl : right to left 오른쪽에서 왼쪽으로 텍스트 표시
+*/
+
+.ltr{
+    direction: ltr;
+}
+
+.rtl{
+    direction: rtl;
+}

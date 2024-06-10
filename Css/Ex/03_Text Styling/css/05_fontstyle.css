@@ -1,0 +1,16 @@
+
+#content1{
+    font-style: normal;
+}
+
+#content2{
+    font-style: italic;
+}
+/*
+ 이탤릭과 옵리크의 차이
+ 이탤릭 - 글꼴에 지정된(포함되어 있는) 이탤릭체 적용
+ 옵리크 - 글꼴 상관없이 단순히 기울인 이탤릭체 적용
+*/
+#content3{
+    font-style: oblique;
+}

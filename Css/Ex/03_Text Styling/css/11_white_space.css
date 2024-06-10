@@ -1,0 +1,26 @@
+/* white_space 속성 : 텍스트와 같이 입력된 공백에 대한 처리를 지정하는 속성 */
+p{
+    width: 200px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.nowrap{
+    /* 여러 개의 공백을 하나로 처리. 영역을 넘어가는 내용은 줄을 바꾸지 않고 그대로 표시. */
+    white-space: nowrap;
+}
+
+.pre{
+    /* 여러 개의 공백을 그대로 표출. 영역을 넘어가는 내용은 줄바꿈을 하지않고 그대로 표시. */
+    white-space: pre;
+}
+
+.pre-line{
+    /* 여러 개의 공백을 하나로 처리. 영역을 넘어가는 내용은 줄을 바꾸어 표시. */
+    white-space: pre-line;
+}
+
+.pre-wrap{
+    /* 여러 개의 공백을 그대로 표출. 영역을 넘어가는 내용은 줄을 바꿔서 표시. */
+    white-space: pre-wrap;
+}

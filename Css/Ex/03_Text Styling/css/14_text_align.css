@@ -1,0 +1,60 @@
+/*
+ text-align 속성 : 텍스트의 정렬 방법 지정
+ 텍스트 뿐만 아니라 자식 태그의 정렬 방식도 지정한다.
+*/
+
+p{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 15px;
+}
+
+.left{
+    /*left : 왼쪽 정렬*/
+    text-align: left;
+}
+.right{
+    /*right : 오른쪽 정렬*/
+    text-align: right;
+}
+.center{
+    /*center : 가운데 정렬*/
+    text-align: center;
+}
+.justify1{
+    /*justify : 양 쪽 정렬*/
+    text-align: justify;
+}
+.justify1:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+/*
+ text-align : justify를 완벽히 구현하려면
+ 가상 선택자 :after를 이용해 추가로 스타일을 지정 해 주어야된다. 
+ */
+
+.justify2{
+    /*justify : 양 쪽 정렬*/
+    text-align: justify;
+    /*
+     text-align: justify 로 지정 시 
+     추가로 text-justify 속성을 지정할 수 있다.
+     양 쪽 정렬 후 공백에 대한 처리를 하는 속성
+     text-justify는 표준화가 되지 않아서 접두사를 붙여서 지정한다.
+     사파리, 크롬 -webkit-text-justify
+     모질라 moz , 오페라 o , ms ms
+    */
+    -webkit-text-justify: distribute;
+    -moz-text-justify: distribute;
+    -o-text-justify: distribute;
+    -ms-text-align: distribute;
+    text-justify: distribute;
+}
+.justify2:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
