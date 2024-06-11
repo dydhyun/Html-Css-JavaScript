@@ -1,0 +1,24 @@
+/*
+ 색상 중단점 : 그라데이션 효과가 끝나는 위치
+*/
+div{
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+}
+
+.box1{
+    background: green;
+    background: -webkit-radial-gradient(red, yellow, green);
+    background: -moz-radial-gradient(red, yellow, green);
+    background: -o-radial-gradient(red, yellow, green);
+    background: radial-gradient(red, yellow, green);
+}
+
+.box2{
+    background: green;
+    background: -webkit-radial-gradient(red, yellow 20%, green 40%, yellow 60%, red);
+    background: -moz-radial-gradient(red, yellow 20%, green 40%, yellow 60%, red);
+    background: -o-radial-gradient(red, yellow 20%, green 40%, yellow 60%, red);
+    background: radial-gradient(red, yellow 20%, green 40%, yellow 60%, red);
+}

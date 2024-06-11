@@ -1,0 +1,22 @@
+/*
+ 블록 레벨 태그들은 박스 모델로 width, height, padding, margin 값을 지정 할 수 있다.
+*/
+div{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.box1{
+    background-color: red;
+}
+
+.box2{
+    background-color: green;
+}
+
+.box3{
+    background-color: blue;
+}

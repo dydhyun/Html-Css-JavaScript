@@ -1,0 +1,47 @@
+/*
+ background-size 속성: 배경 이미지의 크기를 조절하는 속성
+*/
+div{
+    width: 150px;
+    height: 100px;
+    background-image: url(../../../images/bit.png);
+    margin: 20px;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+}
+
+.box1{
+    /*
+     auto : 기본 값으로 원본 이미지 크기 그대로 표출
+    */
+    background-size: auto;
+
+}
+
+.box2{
+    /*
+     contain : 태그 안에 이미지가 다 들어오도록 축소 및 확대
+    */
+    background-size: contain;
+}
+
+.box3{
+    /*
+     cover : 이미지가 태그를 다 덮도록 축소 및 확대해서 표출
+    */
+    background-size: cover;
+}
+
+.box4{
+    /*
+     수치: 가로길이 세로길이 로 지정
+    */
+    background-size: 70px 50px;
+}
+
+.box5{
+    /*
+     백분율 : 가로길이 세로길이 로 지정, 원본 이미지 크기 에서의 퍼센테이지로 지정
+    */
+    background-size: 60% 40%;
+}

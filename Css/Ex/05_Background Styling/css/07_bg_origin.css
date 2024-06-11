@@ -1,0 +1,36 @@
+/*
+ background-origin 속성: 배경 이미지를 배치할 기준을 설정하는 속성
+*/
+
+div{
+    width: 500px;
+    height: 500px;
+    border: 50px solid rgba(0, 0, 0, .2);
+    margin: 20px;
+    padding: 50px;
+    background-image: url(../../../images/bit.png);
+    background-repeat: no-repeat;
+    background-color: beige;
+}
+
+.box1{
+    /*
+     border-box: border를 기준으로 배경 이미지를 배치한다.
+    */
+    background-origin: border-box;
+}
+
+.box2{
+    /*
+     padding-box: padding을 기준으로 배경 이미지를 배치한다.
+    */
+    background-origin: padding-box;
+}
+
+
+.box3{
+    /*
+     content-box: content (내용을) 를 기준으로 배경 이미지를 배치한다.
+    */
+    background-origin: content-box;
+}

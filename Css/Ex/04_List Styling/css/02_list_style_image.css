@@ -1,0 +1,4 @@
+/*list-style-image 속성: 불릿대신 이미지를 넣어주는 속성. ul에서만 사용가능*/
+ul {
+    list-style-image: url(../../../images/dot.png);
+}

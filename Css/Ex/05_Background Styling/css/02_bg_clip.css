@@ -1,0 +1,32 @@
+/*
+ background-clip 속성 : 배경색상의 적용 범위를 설정하는 속성
+*/
+div{
+    width: 80%;
+}
+
+
+.paddingbox{
+    background-color: lightblue;
+    border: 50px dashed rgba(0, 0, 0, .5);
+    padding: 20px;
+    /*padding-box: padding까지 배경색 적용 (기본값)*/
+    background-clip: padding-box;
+}
+
+
+.borderbox{
+    background-color: lightblue;
+    border: 10px dashed rgba(0, 0, 0, .5);
+    padding: 50px;
+    /*border-box: border까지 배경색 적용*/
+    background-clip: border-box;
+}
+
+.contentbox{
+    background-color: lightblue;
+    border: 50px dashed rgba(0, 0, 0, .5);
+    padding: 20px;
+    /*content-box: content까지 배경색 적용*/
+    background-clip: content-box;
+}

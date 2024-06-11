@@ -1,0 +1,16 @@
+/*
+ 색상 중단점 : 그라데이션 효과가 끝나는 위치
+*/
+
+div{
+    width: 500px;
+    height: 300px;
+}
+
+.box1{
+    background: #06f;
+    background: -webkit-linear-gradient(bottom, #06f,white 30%, #06f 60%,white 70%, black 90%);
+    background: -moz-linear-gradient(bottom,#06f,white 30%, #06f 60%,white 70%, black 90%);
+    background: -o-linear-gradient(bottom,#06f,white 30%, #06f 60%,white 70%, black 90%);
+    background: linear-gradient(to bottom,#06f,white 30%, #06f 60%,white 70%, black 90%);
+}

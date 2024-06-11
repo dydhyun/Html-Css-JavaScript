@@ -1,0 +1,26 @@
+/*
+ 원형 그라데이션 : 원 모양이나 타원 모양으로 점점 색이 변해가는 효과
+*/
+div{
+    width: 500px;
+    height: 300px;
+}
+
+.box1{
+    background: red;
+    /* 모양을 지정하지 않으면 기본값인 타원(ellipse) 로 지정된다 */
+    background: -webkit-radial-gradient(white,yellow,red);
+    background: -moz-radial-gradient(white,yellow,red);
+    background: -o-radial-gradient(white,yellow,red);
+    background: radial-gradient(white,yellow,red);
+}
+
+
+.box2{
+    background: red;
+    /* 모양을 circle 로 지정 */
+    background: -webkit-radial-gradient(circle,white,yellow,red);
+    background: -moz-radial-gradient(circle,white,yellow,red);
+    background: -o-radial-gradient(circle,white,yellow,red);
+    background: radial-gradient(circle,white,yellow,red);
+}

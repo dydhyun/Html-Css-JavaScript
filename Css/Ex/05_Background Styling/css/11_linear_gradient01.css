@@ -1,0 +1,25 @@
+/*
+ 선형 그라데이션 : 수평이나 수직으로 색상이 변해가는 효과를 주는 것.
+*/
+
+div{
+    width: 500px;
+    height: 300px;
+}
+
+.box1{
+    background: blue;
+    background: -webkit-linear-gradient(right bottom, blue, white);
+    background: -moz-linear-gradient(right bottom, blue, white);
+    background: -o-linear-gradient(right bottom, blue, white);
+    background: linear-gradient(to right bottom, blue, white);
+    /* to 키워드를 붙여준다. */
+}
+
+.box2{
+    background: red;
+    background: -webkit-linear-gradient(45deg, red, white);
+    background: -moz-linear-gradient(45deg, red, white);
+    background: -o-linear-gradient(45deg, red, white);
+    background: linear-gradient(45deg, red, white);
+}

@@ -1,0 +1,23 @@
+/*
+ 인라인 레벨 태그들은 박스 모델이 아니여서 width, height, padding, margin 값을 가질 수 없고,
+ 한 줄에 여러개의 태그를 배치 할 수 있다.
+*/
+span{
+    color:antiquewhite;
+    width: 100px;
+    height: 100px;
+}
+
+.box1{
+    background-color: red;
+}
+
+.box2{
+    background-color: green;
+}
+
+.box3{
+    background-color: blue;
+}
+
+

@@ -1,0 +1,10 @@
+/*
+ list-style-position: 항목들의 들여쓰기 여부를 설정 할 수 있다.
+*/
+.inside{
+    list-style-position: inside;
+}
+
+.outside{
+    list-style-position: outside;
+}

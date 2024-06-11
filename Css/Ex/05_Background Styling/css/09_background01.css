@@ -1,0 +1,7 @@
+/*
+ background 속성: 배경 관련 스타일을 한 번에 지정하는 속성
+*/
+body{
+    background: url(../../../images/bit.png) no-repeat fixed left top;
+    height: 2000px;
+}

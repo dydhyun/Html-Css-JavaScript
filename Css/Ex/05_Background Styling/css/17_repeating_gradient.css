@@ -1,0 +1,53 @@
+/*
+ 그라데이션의 반복 : 그라데이션의 반복은 단순 색상을 반복하는 것이 아닌
+                    그라데이션 패턴을 반복하는 것이다.
+*/
+
+div{
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+}
+
+.box1{
+    background: red;
+    background: -webkit-repeating-linear-gradient(yellow, red 20px);
+    background: -moz-repeating-linear-gradient(yellow, red 20px);
+    background: -o-repeating-linear-gradient(yellow, red 20px);
+    background: repeating-linear-gradient(yellow, red 20px);
+}
+
+.box2{
+    background: red;
+    background: -webkit-repeating-radial-gradient(yellow, red 20px);
+    background: -moz-repeating-radial-gradient(yellow, red 20px);
+    background: -o-repeating-radial-gradient(yellow, red 20px);
+    background: repeating-radial-gradient(yellow, red 20px);
+}
+
+.box3{
+    background: red;
+    background: -webkit-repeating-radial-gradient(yellow, yellow 20px, red 20px, red 40px);
+    background: -moz-repeating-radial-gradient(yellow, yellow 20px, red 20px, red 40px);
+    background: -o-repeating-radial-gradient(yellow, yellow 20px, red 20px, red 40px);
+    background: repeating-radial-gradient(yellow, yellow 20px, red 20px, red 40px);
+}
+
+
+.box4{
+    width: 300px;
+    background: grey;
+    background: -webkit-repeating-radial-gradient(white,grey 10px);
+    background: -moz-repeating-radial-gradient(white,grey 10px);
+    background: -o-repeating-radial-gradient(white,grey 10px);
+    background: repeating-radial-gradient(white,grey 10px);
+}
+
+.box5{
+    width: 300px;
+    background: grey;
+    background: -webkit-repeating-radial-gradient(white , white 10px,grey 10px, grey 20px);
+    background: -moz-repeating-radial-gradient(white , white 10px,grey 10px, grey 20px);
+    background: -o-repeating-radial-gradient(white , white 10px,grey 10px, grey 20px);
+    background: repeating-radial-gradient(white , white 10px,grey 10px, grey 20px);
+}

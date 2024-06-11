@@ -1,0 +1,44 @@
+/*
+ 원형 그라데이션의 크지 지정:
+ closest-side: 가장 가까운 변이랑 닿도록 크기 지정
+ closest-corner: 가장 가까운 꼭지점 닿도록 크기 지정
+ farthest-side: 가장 먼 변이랑 닿도록 크기 지정
+ farthest-corner: 가장 먼 꼭지점이랑 닿도록 크기 지정
+*/
+div{
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+}
+
+.box1{
+    background: green;
+    background: -webkit-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+    background: -moz-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+    background: -o-radial-gradient(30% 40%, circle closest-side, white, yellow, green);
+    background: radial-gradient(at 30% 40%, circle closest-side, white, yellow, green);
+}
+
+.box2{
+    background: green;
+    background: -webkit-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+    background: -moz-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+    background: -o-radial-gradient(30% 40%, circle closest-corner, white, yellow, green);
+    background: radial-gradient(at 30% 40%, circle closest-corner, white, yellow, green);
+}
+
+.box3{
+    background: green;
+    background: -webkit-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+    background: -moz-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+    background: -o-radial-gradient(30% 40%, circle farthest-side, white, yellow, green);
+    background: radial-gradient(at 30% 40%, circle farthest-side, white, yellow, green);
+}
+
+.box4{
+    background: green;
+    background: -webkit-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+    background: -moz-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+    background: -o-radial-gradient(30% 40%, circle farthest-corner, white, yellow, green);
+    background: radial-gradient(at 30% 40%, circle farthest-corner, white, yellow, green);
+}

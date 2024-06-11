@@ -1,0 +1,14 @@
+/*
+ background-attachment 속성 : 배경 이미지를 고정해서 나타낼때 사용하는 속성
+ */
+body {
+    background-image: url(../../../images/bit.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+}
+
+div {
+    width: 80%;
+    height: 20000px;
+}

@@ -1,0 +1,91 @@
+/*
+ display 속성 : 블록 태그를 인라인으로 변경하거나 인라인 태그를 블록 태그로 변경하는 속성
+
+        block : 해당 태그를 블록 태그로 변경
+        inline : 해당 태그를 인라인 태그로 변경
+        inline-block : 해당 태그를 인라인 태그로 변경하며,
+         블록태그의 속성인 width,height, margin, padding 을 갖는 박스모델로 만든다.
+*/
+
+span{
+    color: wheat;
+}
+
+.box1{
+    background-color: red;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    padding: 30px;
+}
+
+.box2{
+    background-color: green;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    padding: 30px;
+}
+
+.box3{
+    background-color: blue;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    padding: 30px;
+}
+
+
+
+div{
+    color:antiquewhite;
+}
+
+.dbox1{
+    display: inline;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.dbox2{
+    display: inline;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
+
+.dbox3{
+    display: inline;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+
+.inlineblock1{
+    display: inline-block;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+}
+
+.inlineblock2{
+    display: inline-block;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+}
+
+.inlineblock3{
+    display: inline-block;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+}

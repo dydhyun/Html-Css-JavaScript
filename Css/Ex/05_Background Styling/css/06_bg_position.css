@@ -1,0 +1,38 @@
+/*
+ background-position 속성 : 배경 이미지의 위치를 설정하는 속성
+*/
+
+div{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 20px;
+    background-image: url(../../../images/bit.png);
+    background-repeat: no-repeat;
+}
+
+.box1{
+ /*
+  키워드로 설정
+    수평 키워드: left, center, right 사용가능
+    수직 키워드: top, center, bottom 사용가능
+ */   
+ background-position: left top;
+}
+
+.box2{
+    background-position: center center;
+}
+
+.box3{
+    /*
+     수치나 백분율 로 지정
+        수평위치와 수직위치를 수치나 백분율로 지정한다.
+    */
+    background-position: 250px 250px;
+    /*시작점의 위치좌표가 250px , 250px*/
+}
+
+.box4{
+    background-position: 50% 50%;
+}

@@ -1,0 +1,27 @@
+/*
+ 원형 그라데이션의 위치: 그라데이션 효과가 시작되는 원이나 타원의 중심 좌표를 지정
+*/
+div{
+    width: 500px;
+    height: 300px;
+}
+
+.box1{
+    background: blue;
+    /*백분율로 원이나 타원의 중심좌표 지정*/
+    background: -webkit-radial-gradient(30% 40%, circle, white, blue);
+    background: -moz-radial-gradient(30% 40%, circle, white, blue);
+    background: -o-radial-gradient(30% 40%, circle, white, blue);
+    background: radial-gradient(at 30% 40%, circle, white, blue);
+    /*표준화가 완료된 radial-gradient(at 에는 at 키워드를 사용해 준다*/
+}
+
+.box2{
+    background: blue;
+    /*키워드로 원이나 타원의 중심 좌표 지정*/
+    background: -webkit-radial-gradient(right bottom, circle, white, blue);
+    background: -moz-radial-gradient(right bottom, circle, white, blue);
+    background: -o-radial-gradient(right bottom, circle, white, blue);
+    background: radial-gradient(at right bottom, circle, white, blue);
+    /*표준화가 완료된 radial-gradient(at 에는 at 키워드를 사용해 준다*/
+}
