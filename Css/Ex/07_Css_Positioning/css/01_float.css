@@ -1,0 +1,37 @@
+/*float 속성 : 태그를 다른 레이어로 옮겨서 왼 쪽이나 오른 쪽에 배치하는 속성*/
+
+div{
+    width: 30px;
+    height: 30px;
+}
+
+
+.box1{
+    background: lightblue;
+    float: left;
+}
+
+
+.box2{
+    background: lightseagreen;
+    float: left;
+}
+
+
+.box3{
+    background: lightgreen;
+    float: left;
+}
+
+
+.box4{
+    background: lightcoral;
+    float: right;
+}
+
+
+.box5{
+    background: orangered;
+    margin-top: 200px;
+    margin-left: 200px;
+}

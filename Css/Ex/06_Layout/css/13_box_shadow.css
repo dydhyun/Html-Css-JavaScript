@@ -1,0 +1,30 @@
+/*box-shadow 속성 : 태그에 그림자를 만들어 주는 속성*/
+
+div{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.box1{
+    box-shadow: 5px 5px gray;
+}
+
+
+.box2{/*번짐정도 흐림정도 추가 지정 된다.*/
+    box-shadow: 5px 5px 15px 5px gray;
+}
+
+
+/*inset 속성을 추가로 지정하면 박스 안 쪽으로 그림자 지정이 가능함*/
+
+.inbox1{
+    box-shadow: 5px 5px gray inset;
+}
+
+
+.inbox2{
+    box-shadow: 5px 5px 15px 5px gray inset;
+}

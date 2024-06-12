@@ -1,0 +1,16 @@
+/*
+ :link => 사용자가 방문하지 않았던 링크에 대한 스타일 지정
+ :visited => 사용자가 방문 한 링크에 대한 스타일 지정
+*/
+
+a{
+    text-decoration: none;
+}
+
+a:link{
+    color: green;
+}
+
+a:visited{
+    color: burlywood;
+}

@@ -1,0 +1,28 @@
+/*
+ width: 박스 모델의 영역 가로길이를 지정하는 속성
+ height: 박스 모델의 영역 세로길이를 지정하는 속성
+ */
+ 
+div {
+    margin: 20px;
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.box2 {
+    background: skyblue;
+    width: 50%;
+    height: 300px;
+}
+
+.box3 {
+    background: lightgreen;
+    width: 30%;
+    height: 30%;
+}

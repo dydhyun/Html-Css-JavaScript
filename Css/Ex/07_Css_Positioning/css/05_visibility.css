@@ -1,0 +1,28 @@
+/*
+ visibility 속성 : 특정 태그를 화면에 서 숨기거나 보이게 할 때 지정하는 속성
+*/
+div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.box1{
+    background: red;
+    visibility: hidden;
+}
+
+    /*
+     기본값은 visible이며 태그를 생성하면 무조건 보여지도록 설정된다.
+     visibility hidden; 은 태그가 차지한 공간은 그대로 남아있다.
+     display none; 은 태그가 차지한 공간까지 사라진다.
+    */
+.box2{
+    background: green;
+    display: none;
+}
+
+.box3{
+    background: blue;
+}

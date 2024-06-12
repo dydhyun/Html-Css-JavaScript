@@ -1,0 +1,17 @@
+/*
+ :checked => 라디오 버튼이나 체크박스에 체크가 된 상태에서 적용할 스타일 지정
+*/
+
+input[name="language"]:checked + span{
+    color: red;
+}
+
+input[name="favorite"]:checked + span{
+    background: green;
+    color: saddlebrown;
+}
+
+span{
+    color: blue;
+}
+

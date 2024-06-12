@@ -1,0 +1,9 @@
+/*caption-side 속성: caption 태그의 표출 위치를 지정하는 속성, 위 또는 아래를 지정할 수있다.*/
+table{
+    border: 1px solid black;
+    caption-side: bottom;
+}
+
+th,td{
+    border: 1px solid black;
+}

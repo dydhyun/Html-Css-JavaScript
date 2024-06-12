@@ -1,0 +1,11 @@
+/*border-collapse 속성: 표의 테두리와 셀의 테두리의 통합 표출 여부를 설정하는 속성*/
+
+table{
+    border: 1px solid black;
+    /*기본값은 seperate 로 설정하지 않으면 표와 셀의 테두리가 분리되어 표출됨*/
+    border-collapse: collapse;/*통합하는 속성*/
+}
+
+th,td{
+    border: 1px solid black;
+}

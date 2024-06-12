@@ -1,0 +1,29 @@
+/*속성 선택자 : 특정 태그의 속성을 이용해서 태그를 선택할 수 있는 선택자*/
+/*name 속성을 가지고 있는 input 태그 모두 선택*/
+
+input[name]{
+    width: 100px;
+    height: 100px;
+    color: blue;
+    margin: 10px;
+}
+
+/*속성값 으로도 태그를 선택할 수 있다.*/
+/*name 속성을 가지고 있고 name 속성의 값이 username 인 태그만 선택*/
+input[name="username"]{
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid blue;
+    background: orange;
+}
+
+/*속성 선택자는 클래스 선택자나 아이디 선택자와 함께 조합 가능함*/
+.inp[name='password']{
+    background: skyblue;
+    border: 2px dotted orangered;
+}
+/*아이디는 유일해서 어짜피 하나만 선택*/
+#tel[name="tel"]{
+    background: red;
+    border: 2px dashed rebeccapurple;
+}

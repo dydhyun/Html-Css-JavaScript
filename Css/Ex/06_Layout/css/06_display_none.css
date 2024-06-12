@@ -1,0 +1,19 @@
+/*
+ display : none => 태그를 숨기는 속성. 태그가 차지하던 공간도 사라진다.
+ visibility : hidden => 태그를 숨기는 속성. 태그가 차지하던 공간은 남아있다.
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background-color: lightcoral;
+}
+
+.none{
+    display: none;
+}
+
+.hidden{
+    visibility: hidden;
+}

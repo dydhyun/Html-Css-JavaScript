@@ -1,0 +1,29 @@
+/*
+ border-radius 속성 : 테두리 꼭지점 부분을 둥글게 만들어 주는 속성.
+ 지정하는 값은 원형으로 만들어지는 원의 반지름 값.
+*/
+div{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.box1{
+    /*각 꼭지점을 다른 크기로 둥글게 만듦 반지름의 크기*/
+    border-top-left-radius: 10%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 30px;
+}
+
+.box2{
+    /*모든 꼭지점을 동일한 크기로 둥글게 만들다.*/
+    border-radius: 10px;
+}
+
+.box3{
+    border-radius: 30% 50%;
+    background-color: lemonchiffon;
+}

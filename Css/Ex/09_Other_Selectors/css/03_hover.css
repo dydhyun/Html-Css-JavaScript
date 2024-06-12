@@ -1,0 +1,41 @@
+/*
+ :hover => 사용자가 해당 태그에 마우스 커서를 올렸을 때 스타일 지정
+*/
+
+.container{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.box1{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: violet;
+}
+
+.box1:hover{
+    left: 200px;
+    top: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: darkcyan;
+}
+
+
+.box2{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: steelblue;
+}
+
+.box2:hover{
+    left: 200px;
+    top: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+}

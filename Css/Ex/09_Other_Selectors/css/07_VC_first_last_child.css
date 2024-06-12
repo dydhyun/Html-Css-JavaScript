@@ -1,0 +1,18 @@
+/*
+ :first-child => 자식 태그중 첫 번째 자식 태그에 스타일 지정
+ :last-child => 자식 태그중 마지막 번째 자식 태그에 스타일 지정
+*/
+table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr:first-child{
+    background: yellow;
+    color: green;
+}
+
+tr:last-child{
+    background: red;
+    color: green;
+}

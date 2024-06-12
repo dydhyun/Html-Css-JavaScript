@@ -1,0 +1,27 @@
+/*
+ position : relative => 문서의 흐름대로 배치, 태그를 나열한 순서대로 배치하는 속성(static 과 동일)
+            top, left, right, bottom 속성을 사용할 수 있다.(static과 다른점)
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    margin: 5px;
+}
+
+/*positon : static*/
+.box1{
+    background-color: aquamarine;
+    position: static;
+}
+/*relative 의 기준이 될 static position이 필요하다.*/
+
+.box2{
+    background: aqua;
+    position: relative;
+    /* left, right 중 하나만 지정*/
+    left: 150px;
+    /* top, bottom 중 하나만 지정*/
+    top: 30px;
+}

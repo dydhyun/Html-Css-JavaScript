@@ -1,0 +1,62 @@
+/*
+ position : absolute => 부모태그중 position: relative로 설정돼있는 부모태그를 기준으로
+                        top, left, right, bottom으로 원하는 위치에 배치.
+                        부모태그중 position: relative로 설정돼있는 부모태그가 없으면
+                        body가 기준이 됨.
+                        + 길이계산에서 빠지게되니 계산에 유의하자~
+*/
+
+body{
+    width: 2000px;
+    height: 2000px;
+    position: relative;
+}
+
+.container{
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.wrapper{
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+}
+
+.box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+#box1 {
+    top: 0;
+    left: 0;
+    background: orange;
+}
+
+#box2 {
+    top: 0;
+    right: 0;
+    background: aqua;
+}
+
+#box3 {
+    bottom: 0;
+    right: 0;
+    background: lightgreen;
+}
+
+#box4 {
+    bottom: 0;
+    left: 0;
+    background: violet;
+}
+
+#box5 {
+    top: 100px;
+    left: 100px;
+    background: gold;
+}

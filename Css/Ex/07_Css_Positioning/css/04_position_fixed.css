@@ -1,0 +1,18 @@
+/*
+ position : fixed => 브라우저 기준으로 태그를 원하는 위치에 배치하는 속성.
+ 항상 고정된 위치에 태그가 표출된다.
+*/
+
+body{
+    height: 30000px;
+    overflow: scroll;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    background: skyblue;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

@@ -1,0 +1,13 @@
+/*
+ a:active => 해당 태그가 활성화 되는 순간 적용될 스타일을 지정
+ :focus => 해당 태그에 포커스가 가있는 동안 적용될 스타일 지정
+*/
+
+input[name="username"]:active{
+    background: red;
+}
+
+input[name="password"]:focus{
+    background: royalblue;
+}
+

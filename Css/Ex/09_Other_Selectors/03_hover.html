@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자가 마우스 커서를 올렸을 때의 스타일을 지정하는 :hover</title>
+    <link rel="stylesheet" href="css/03_hover.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <script>
+        // :hover 는 mouseover 이벤트와 동일하게 동작한다.
+        document.getElementsByClassName("box2")[0].addEventListener("mouseover", (e) =>{
+            e.target.style.backgroundColor = "tomato";
+            e.target.style.width = "200px";
+            e.target.style.height = "200px";
+            e.target.style.right = "50px";
+            e.target.style.bottom = "50px";
+        });
+
+        // mouseout 까지 주어야 hover랑 동일해짐
+        document.getElementsByClassName("box2")[0].addEventListener("mouseout", (e) =>{
+            e.target.style.backgroundColor = "cyan";
+            e.target.style.width = "50px";
+            e.target.style.height = "50px";
+            e.target.style.right = "0";
+            e.target.style.bottom = "0";
+        });
+    </script>
+</body>
+</html>

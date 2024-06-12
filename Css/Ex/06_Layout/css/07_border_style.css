@@ -1,0 +1,28 @@
+/*
+ border-style 속성 : 테두리의 모양을 지정하는 속성
+*/
+div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border: 10px black;
+    background-color: thistle;
+    text-align: center;
+}
+
+.solid{
+    border-style: solid;
+}
+
+.dashed{
+    border-style: dashed;
+}
+
+.dotted{
+    border-style: dotted;
+}
+
+.double{
+    border-style: double;
+}

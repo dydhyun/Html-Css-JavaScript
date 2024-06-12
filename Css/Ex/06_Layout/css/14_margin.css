@@ -1,0 +1,53 @@
+/*margin 속성 : 박스 모델과 박스모델 사이의 거리를 조절하는 속성*/
+div{
+    width: 100px;
+    height: 100px;
+    background: skyblue;
+    display: inline-block;
+}
+
+.box1{
+    /*네 방향 모두 동일한 margin값 적용*/
+    margin: 30px;
+}
+
+
+.box2{
+    /*각 방향마다 margin값 적용*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+
+.box3{
+    /*margin값을 두개 적용할 시 위+아래, 좌+우 로 적용*/
+    margin: 30px 15px;
+}
+
+
+.box4{
+    /*margin값 세개 적용할 시 위, 좌우 , 아래 로 적용*/
+    margin: 30px 20px 10px;
+}
+
+
+.box5{
+    /*margin값 네개 주면 위, 우, 아래 , 좌 로 적용(시계방향 적용)*/
+    margin: 40px 30px 20px 10px;
+}
+
+
+.box6{
+    /*
+     좌우 margin값 auto로 주면,
+     width를 뺀 나머지 길이를 반반으로 나눠서 좌우 margin으로 사용함.
+     수평으로 항상 브라우저에 가운데 정렬 돼 있는 태그를 만들 수 있음.
+
+     수직 margin은 불가능함. height 값이 컨텐츠의 양 만큼 잡히기 때문.
+    */
+    /*값 두 개주든 세 개주든 좌우 auto가 들어가서 상관없음*/
+    display: block;
+    margin: 20px auto 20px;
+}
