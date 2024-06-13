@@ -1,0 +1,49 @@
+/*
+ scale 함수 : x축, y축으로 태그를 축소/확대 시키는 함수.
+ 매개변수로 단위 없이 실수 사용
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.box1{
+    background: coral;
+}
+
+.box2{
+    background: greenyellow;
+}
+
+.box3{
+    background: lightblue;
+}
+
+.box4{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background: crimson;
+}
+
+.box1:hover{
+    transform: scale(1.5, 0.5);
+    width: 200px;
+    height: 200px;
+}
+
+.box2:hover{
+    transform: scalex(0.5);
+}
+
+.box3:hover{
+    transform: scaley(1.5);
+}
+
+
+.box4:hover{
+    transform: scale(1.5, 0.5);
+}

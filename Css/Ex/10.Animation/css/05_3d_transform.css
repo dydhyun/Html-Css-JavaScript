@@ -1,0 +1,31 @@
+/*
+ 3 차원 transform 은 2 차원 평면에 z 축을 추가한 변형
+ 웹 자체가 평면이기 때문에 많이 사용되지는 않는다.!!~~
+*/
+
+body{
+    perspective: 300px;
+    /*원근감 주기*/
+}
+
+div{
+    width: 100px;
+    height: 100px;
+}
+
+.box{
+    background: orangered;
+}
+
+.box:hover{
+    transform: translate3d(30px,30px,-30px);
+}
+
+
+.box2{
+    background: coral;
+}
+
+.box2:hover{
+    transform: translate3d(60px,30px,60px);
+}

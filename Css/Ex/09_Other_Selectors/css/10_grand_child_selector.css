@@ -1,0 +1,13 @@
+/*
+ 자손 선택자 : 특정 태그의 하위에 있는 태그를 모두 선택.
+ 하위 레벨과 상관 없이 모두 선택한다.
+*/
+.container1 .txt{
+    background: skyblue;
+    color: red;
+}
+
+.container1 > .txt{
+    background: yellow;
+    color: green;
+}

@@ -1,0 +1,31 @@
+/*rotate 함수: x축, y축으로 태그를 지정한 각도만큼 회전시키는 함수, 매개변수로 deg와 각도를 넣어준다.*/
+div {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.box1 {
+    background: orange;
+}
+
+.box2 {
+    background: skyblue;
+}
+
+.box3 {
+    background: lightgreen;
+}
+
+.box1:hover {
+    transform: rotateX(45deg);
+}
+
+.box2:hover {
+    transform: rotateY(45deg);
+}
+
+.box3:hover {
+    transform: rotate(45deg);
+}

@@ -1,0 +1,33 @@
+/*
+ justify-content 속성 : 주축을 기준으로 플렉스 항목들을 어떻게 배치할지 결정하는 속성
+*/
+.container{
+    display: flex;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+.container1{
+    justify-content: flex-start;
+}
+
+.container2{
+    justify-content: flex-end;
+}
+
+.container3{
+    justify-content: center;
+}
+
+.container4{
+    justify-content: space-between;
+}
+
+.container5{
+    justify-content: space-around;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background: cyan;
+    color: white;
+}

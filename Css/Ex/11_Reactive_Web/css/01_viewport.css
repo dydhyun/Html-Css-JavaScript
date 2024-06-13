@@ -1,0 +1,11 @@
+/*
+ vw (viewport-width) : 현재 보고있는 디바이스의 가로길이를 기준으로 가로길이를 지정.
+ vh (viewport-height) : 현재 보고있는 디바이스의 세로길이를 기준으로 세로길이를 지정.
+ 
+*/
+
+div{
+    width: 80vw;
+    height: 80vh;
+    background: blue;
+}

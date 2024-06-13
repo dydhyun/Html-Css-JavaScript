@@ -1,0 +1,33 @@
+/*
+ flex-direction 속성 : 주 축을 가로나 세로로 변경하는 속성
+ 기본값은 row.
+*/
+
+.container{
+    display: flex;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+.container1{
+    flex-direction: row;
+}
+
+.container2{
+    flex-direction: column;
+}
+
+.container3{
+    flex-direction: row-reverse;
+}
+
+.container4{
+    flex-direction: column-reverse;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background: green;
+    border: 1px solid red;
+}

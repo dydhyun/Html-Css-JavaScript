@@ -1,0 +1,14 @@
+/*형제 선택자(~): 해당 태그 뒤에 선언된 모든 형제 태그를 선택하는 선택자*/
+div {
+    margin-top: 20px;
+}
+
+.nsibling + p {
+    background: limegreen;
+    color: red;
+}
+
+.sibling ~ p {
+    background: yellow;
+    color: green;
+}

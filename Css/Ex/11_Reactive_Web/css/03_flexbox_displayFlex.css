@@ -1,0 +1,21 @@
+/*
+ display : flex; => 플렉스 컨테이너를 만들어 주는 속성
+                    해당 속성이 지정된 태그 안의 자식 태그들을 플렉스 항목이 되고
+                    플렉스 컨테이너에서 지정한 정렬 방식에 따라서 배치된다.
+*/
+
+.box1, .box2, .box3, .box4{
+    background: skyblue;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+
+.container{
+    display: flex;
+    
+    /* 주축 정렬 방법 / 주축이 바뀌면 교차축도 따라서 변경된다~ */
+    justify-content: space-around;
+    
+}

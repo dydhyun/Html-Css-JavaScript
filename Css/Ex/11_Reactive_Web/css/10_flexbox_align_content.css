@@ -1,0 +1,22 @@
+/*
+ align-content 속성 : 플렉스 항목이 여러 줄로 표시 될 때, 교차축 배치 방법을 지정하는 속성.
+ 플렉스 항목들이 여러 줄로 표시돼야 되기 때문에 flex-wrap: wrap 으로 설정됐을 때 만 사용가능.
+ 사용가능한 속성 값은 justify-content의 속성값에 stretch 만 추가
+*/
+
+.container{
+    display: flex;
+    border: 1px solid black;
+    width: 1000px;
+    height: 800px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.box{
+    width: 300px;
+    height: 300px;
+    background: green;
+    border: 1px solid salmon;
+}

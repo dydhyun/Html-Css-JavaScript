@@ -1,0 +1,44 @@
+/*
+ align-items 속성 : 교차축 기준으로 항목을 배치하는 방식을 지정하는 속성
+*/
+
+.container{
+    display: flex;
+    border: 1px solid black;
+    margin-top: 30px;
+    height: 500px;
+    justify-content: center;
+}
+
+.container1{
+    align-items: flex-start;
+}
+
+.container2{
+    align-items: flex-end;
+}
+
+.container3{
+    align-items: center;
+}
+
+.container4{
+    align-items: baseline;/*교차축의 문자 기준선에 맞춰서 배치한다~*/
+}
+
+.container5{
+    align-items: stretch;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background: lightblue;
+}
+
+.box2{
+    width: 100px;
+    /* align-items : stretch 로 설정 하려면 플렉스 항목의 height 가 auto 로 잡혀 있어야 한다. */
+    height: auto;
+    background: lightblue;
+}

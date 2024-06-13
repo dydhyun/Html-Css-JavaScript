@@ -1,0 +1,37 @@
+/*
+ transition-property 속성 : 스타일 들이 변할 때 애니메이션 효과를 추가 할 수 있는 속성
+                            지정하는 값은 style 의 속성들.
+
+ transition-duration 속성 : 애니메이션 효과가 지속될 시간을 지정하는 속성.
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.box1{
+    background: lightsalmon;
+    transition-property: width, height;
+    transition-duration: 2s, 4s; /*하나의 값을 주면 한번에 시간주기 , 두개 값 주면 따로따로 시간 주는 것.*/
+}
+
+.box1:hover{
+    width: 200px;
+    height: 150px;
+}
+
+
+.box2{
+    background: teal;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.box2:hover{
+    border-radius: 50%;
+    background: mediumvioletred;
+    width: 300px;
+    height: 450px;
+}

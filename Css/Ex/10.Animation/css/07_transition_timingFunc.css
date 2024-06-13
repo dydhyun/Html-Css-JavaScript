@@ -1,0 +1,50 @@
+/*
+ transition-timing-function 속성 : 애니메이션 효과의 진행 속도를 지정하는 속성.
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    background: cyan;
+    transition-property: all;
+    transition-duration: 4s;
+    text-align: center;
+}
+
+.box1{
+    /*ease: 처음에는 천천히 점점 빨라지다가 마지막에는 천천히, 기본값*/
+    transition-timing-function: ease;
+}
+
+.box2{
+    /*ease-in: 처음에만 느리게.*/
+    transition-timing-function: ease-in;
+}
+
+.box3{
+    /*ease-out: 마지막에만 느리게.*/
+    transition-timing-function: ease-out;
+}
+
+.box4{
+    /*ease-in-out: 처음과 마지막만 느리게.*/
+    transition-timing-function: ease-in-out;
+}
+
+.box5{
+    /*linear: 처음부터 끝까지 일정 속도로 진행.*/
+    transition-timing-function: linear;
+}
+
+div:hover{
+    background: royalblue;
+    border-radius: 50%;
+}
+
+.box6{
+    /*ease: 처음에는 천천히 점점 빨라지다가 마지막에는 천천히, 기본값*/
+    transition-timing-function: ease;
+    /*transition-delay: 애니메이션 지연시간을 지정. 애니메이션 효과가 지정해 준 시간만큼 딜레이 후 진행*/
+    transition-delay: 2s;
+}

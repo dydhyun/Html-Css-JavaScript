@@ -1,0 +1,21 @@
+/*
+ flex-wrap 속성 : 플렉스 항목들을 한 줄로 배치할 건지,
+                 여러 줄로 배치 할 건지 결정하는~ 속성
+                 기본 값은 no-wrap 으로 한 줄로 표시한다.
+                 플렉스 컨테이너 크기보다 커지면 자동으로 플렉스 항목들의 크기를 줄인다.
+                 보통 wrap과 no-wrap을 많이 쓴다한다. reverse는 잘 안씀
+*/
+
+.container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.box{
+    width: 500px;
+    height: 500px;
+    background: crimson;
+    border: 1px solid red;
+    text-align: center;
+    color: aliceblue;
+}

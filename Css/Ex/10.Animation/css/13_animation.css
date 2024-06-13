@@ -1,0 +1,34 @@
+/* animation : 관련 속성을 한 번에 지정 할 수 있다. */
+
+div{
+    width: 100px;
+    height: 100px;
+    margin: 20px;;
+}
+@keyframes change-bgcolor{
+    from{
+        background: orange;
+    }  
+    to{
+        background: lightgreen;
+    }
+}
+
+@keyframes change-shape{
+    from{
+        border-radius: 0;
+    }
+    to{
+        border-radius: 50%;
+    }
+}
+
+.box1{
+    animation: change-bgcolor 3s linear 1s 10 reverse;
+}
+
+
+.box2{
+    background: skyblue;
+    animation: change-shape 5s infinite ease-in alternate;
+}

@@ -1,0 +1,22 @@
+
+body{
+    perspective: 300px;
+}
+
+div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background: cornflowerblue;
+    transition-property: width, height, background-color, transform;
+    transition-duration: 1s, 2s, 3s, 5s;
+    /*width 1초, height 2초, bg 3초, transform 5초 동안 지속되는 트랜지션 만들기~*/
+}
+
+div:hover{
+    /*커서 올리면 Width 200px, Height 150px, bg:red, transform 45도 회전하기*/
+    width: 200px;
+    height: 150px;
+    background: red;
+    transform: rotate(45deg);
+}

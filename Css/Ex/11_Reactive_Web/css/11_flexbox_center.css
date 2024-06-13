@@ -1,0 +1,16 @@
+/*
+ viewport 와 플렉서블 박스를 이용해 태그를 정 중앙에 배치.
+*/
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background: tomato;
+}

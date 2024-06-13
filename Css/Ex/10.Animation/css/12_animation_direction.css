@@ -1,0 +1,63 @@
+/*
+ animation-direction 속성 : 시작 애니메이션의 진행방향 지정(정방향, 역방향)
+                            normal( from -> to   0 -> 100% )
+                            reverse( to -> from   100% -> 0 )
+                            alternate(홀수번째는 from -> to  0 -> 100%,
+                                      짝수번째는 to -> from 100% -> 0)
+                            alternate-reverse(홀수번째는 to -> from 100% -> 0,
+                                              짝수번째는  from -> to  0 -> 100%,)
+
+ animation-iteration-count 속성 : 애니메이션의 반복 횟수 지정
+                                  숫자로 몇번 반복할지 지정할 수도 있고
+                                  infinite 키워드를 사용해 무한 반복 설정도 가능하다.
+*/
+
+
+div{
+    width: 100px;
+    height: 100px;
+    border: 5px solid black;
+    background: blue;
+}
+
+/* @keyframes 옆에 애니메이션 식별자(이름) 을 지정 */
+@keyframes change-bgcolor{
+    /*지점 선택자를 이용해 지점별로 스타일 지정*/
+    from{
+        background: blue;
+    }
+    to{
+        background: greenyellow;
+    }
+}
+
+@keyframes change-bdcolor{
+    0%{
+        border-color: black;
+    }
+    10%{
+        border-color: brown;
+    }
+    40%{
+        border-color: teal;
+    }
+    100%{
+        border-color: lightgoldenrodyellow;
+    }
+}
+
+.box1{
+    /*animation-name 속성으로 위에서 생성한 애니메이션을 지정한다.*/
+    animation-name: change-bgcolor;
+    animation-duration: 5s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+.box2{
+    /*animation-name 속성으로 위에서 생성한 애니메이션을 지정한다.*/
+    animation-name: change-bdcolor;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: 10;
+}

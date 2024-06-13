@@ -1,0 +1,15 @@
+/*
+ transform도 css 의 속성이기 때문에 transition-property로 지정할 수 있다.
+*/
+
+.box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+.box:hover{
+    transform: translate(200px, 200px);
+}

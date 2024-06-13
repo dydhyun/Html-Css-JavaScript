@@ -1,0 +1,30 @@
+/*
+ transition 속성 : 트랜지션 관련 속성을 한 번에 지정
+ (property, duration, timing-function, delay)
+*/
+
+div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background: orange;
+    /*
+     transition 속성으로 모든 스타일이 바뀔 때 3초 동안 애니메이션 효과 유지
+     1초 지연된 애니메이션 일정속도로 진행되도록 만들기.
+    */
+    transition: all 3s linear 1s;
+}
+
+div:hover{
+    width: 150px;
+    height: 150px;
+    border: 5px dashed green;
+    background: crimson;
+    border-radius: 50%;
+}
+/*
+ 마우스 커서를 올렸을 때 수박 만들어 보기~
+ width 150px, height 150px
+ border 5px dotted green, background red
+ border-radius 50%
+*/

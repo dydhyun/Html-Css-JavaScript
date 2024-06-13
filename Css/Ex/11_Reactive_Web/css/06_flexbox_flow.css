@@ -1,0 +1,20 @@
+/*
+ flex-flow 속성 : 
+ flex-direction과 flex-wrap 을 한 번에 지정 할 수 있는 속성이다.
+*/
+
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+    /* flex-flow: column wrap;
+    height: 1400px; */
+}
+
+.box{
+    width: 500px;
+    height: 500px;
+    background: crimson;
+    border: 1px solid red;
+    text-align: center;
+    color: aliceblue;
+}

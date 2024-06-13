@@ -1,0 +1,40 @@
+/*
+ 미디어 쿼리(@media) : 반응형 웹을 구현하기 위해 사이즈 별 중단점을 만들어서
+ 사이즈별로 스타일이나 레이아웃이 다르게 적용되게 하는 기술
+*/
+
+.box{
+    width: 300px;
+    height: 300px;
+    background: orange;
+}
+
+/* PC 화면 */
+@media screen and (min-width: 1024px) {
+    /* 화면 사이즈가 1024px 이상이 되면 아래 스타일 적용 */
+    .box{
+        width: 300px;
+        height: 300px;
+        background: skyblue;
+    }
+}
+
+/* 태블릿 화면 */
+@media screen and (min-width: 768px) and(max-width:1023px){
+    .box{
+        width: 200px;
+        height: 200px;
+        background: lightgreen;
+    }
+    
+}
+
+/* 모바일 화면 */
+@media screen and (max-width: 767px) {
+    .box{
+        width: 100px;
+        height: 100px;
+        background: lightcoral;
+    }
+    
+}
