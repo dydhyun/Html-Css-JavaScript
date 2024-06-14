@@ -1,0 +1,59 @@
+/*
+ 그리드 박스에는 보이지 않는 선들이 존재하는데, 그 선 들을 그리드 라인 이라고 부른다.
+ 그리드 박스에서는 그리드 라인을 이용해 항목들을 배치할 수 있는 기능을 제공한다.
+ 그리드 라인을 이용한 배치방식은 그리드 항목의 속성으로 지정하며
+ 지정하면, 행 병합 열 병합이 일어난 것처럼 배치할 수 있다.
+ grid-column-start 속성 : 컬럼의 시작 라인번호를 지정
+ grid-column-end 속성 : 컬럼의 끝 라인번호를 지정
+ grid-column 속성 : grid-column-start/end 값을 한 번에 지정.
+
+ grid-row-start 속성 : 컬럼의 시작 라인번호를 지정
+ grid-row-end 속성 : 컬럼의 끝 라인번호를 지정
+ grid-row 속성 : grid-row-start/end 값을 한 번에 지정.
+*/
+.container {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(4,minmax(100px,1fr));
+    grid-template-rows: repeat(4,100px);
+}
+
+.box1 {
+    background: red;
+/*그리드 라인을 이용한 배치는 그리드 항목의 속성으로 지정한다.*/
+    /* grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4; /*end 에서 start 를 빼준 만큼 차지한다. */
+    /*grid-template-columns 지정한 개수보다 크게 지정해도 지정한 컬럼의 개수를 벗어나지 않는다.*/
+    grid-column: 1/10;
+    grid-row: 1/20;
+}
+
+.box2 {
+    background: green;
+}
+
+.box3 {
+    background: blue;
+}
+
+.box4 {
+    background: brown;
+}
+
+.box5 {
+    background: violet;
+}
+
+.box6 {
+    background: yellow;
+}
+
+.box7 {
+    background: aqua;
+}
+
+.box8 {
+    background: lightgreen;
+}

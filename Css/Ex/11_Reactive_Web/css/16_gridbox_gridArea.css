@@ -1,0 +1,58 @@
+/*
+ grid-template-areas 속성 : 그리드 컨테이너에 미리 그리드 항목의 영역을 지정하는 속성.
+                        배치될 항목들의 이름으로 영역을 만든다.
+ grid-area 속성 : 그리드 항목에 지정하는 속성으로 그리드 컨테이너에서 생성한 영역에 지정된
+                  항목의 이름을 매핑 시킨다.
+*/
+.container {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(4,minmax(100px,1fr));
+    grid-template-rows: repeat(4,100px);
+    /*항목의 이름은 자유롭게 지정, 빈칸은 . 으로 표시한다.*/
+    grid-template-areas: 
+        "b1 b1 b1 b1"
+        "b2 b2 b3 b3"
+        "b2 b2 b4 b5"
+        "b6 b7 . b8";
+}
+
+.box1 {
+    background: red;
+    grid-area: b1;
+}
+
+.box2 {
+    background: green;
+    grid-area: b2;
+}
+
+.box3 {
+    background: blue;
+    grid-area: b3;
+}
+
+.box4 {
+    background: brown;
+    grid-area: b4;
+}
+
+.box5 {
+    background: violet;
+    grid-area: b5;
+}
+
+.box6 {
+    background: yellow;
+    grid-area: b6;
+}
+
+.box7 {
+    background: aqua;
+    grid-area: b7;
+}
+
+.box8 {
+    background: lightgreen;
+    grid-area: b8;
+}

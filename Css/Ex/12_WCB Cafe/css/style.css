@@ -1,0 +1,414 @@
+/*모든 페이지의 스타일 지정할 스타일 시트*/
+@charset "UTF-8";
+
+/*0. 공통부분 작성*/
+html{
+    font-size: 100%;
+}
+
+body{
+    font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.7;
+    color: #432;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*1. 헤더 부분 작성*/
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/*1-1 로고부분 작성*/
+.logo{
+    width: 210px;
+    margin-top: 14px;
+}
+
+/*1-2 메뉴바 부분 작성*/
+.main-nav{
+    display: flex;
+    list-style: none;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+}
+
+.main-nav li{
+    margin-left: 36px;
+}
+
+.main-nav a{
+    color: #432;
+}
+
+.main-nav a:hover{
+    color: #0bd;
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*2. 메인페이지 컨텐츠 영역*/
+.home-content{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-content p{
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+.page-title{
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.button{
+    font-size: 1.375rem;
+    background-color: #0bd;
+    color: white;
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+
+
+.button:hover{
+    background: #0090aa;
+}
+
+/*3. 메인영역 전체 배경이미지 지정*/
+.big-bg{
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+#home{
+    background-image: url('../images/main-bg.jpg'), linear-gradient(#ccffcc, #ffcccc);
+    min-height: 100vh;
+    /*background-blend-mode : 배경 이미지나 색상에 다양한 효과를 설정할 수 있는 속성*/
+    background-blend-mode: luminosity;
+}
+
+/*4. News 페이지의 헤더이미지 추가*/
+#news{
+    background-image: url('../images/news-bg.jpg');
+    height: 270px;
+    margin-bottom: 40px;
+}
+
+/*4. News 페이지 제목부분*/
+#news .page-title{
+    text-align: center;
+}
+
+
+/*5. News 페이지 컨텐츠 부분*/
+.news-content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+article{
+    width: 74%;
+}
+
+aside{
+    width: 22%;
+}
+
+/*5.1 News 페이지 기사부분*/
+/*기사 제목*/
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 4px;
+}
+
+.post-title{
+    font-family: '나눔명조', nanummyeongjo, serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.post-date{
+    background: #0bd;
+    border-radius: 50%;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+
+.post-date span{
+    font-size: 1rem;
+    border-top: 1px rgba(255, 255, 255, 0.5) solid;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-title, .post-cat{
+    
+    margin-left: 120px;
+}
+
+/*기사 사진*/
+article img{
+    margin-bottom: 20px;
+}
+
+/*기사 내용*/
+article P{
+    margin-bottom: 1rem;
+}
+
+
+/*5.2 News 페이지 사이드바 부분*/
+.sub-title{
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+/*카테고리 아래 가게 소개 부분*/
+aside P{
+    padding: 12px 10px;
+    
+}
+.sub-menu{
+    list-style: none;
+    margin-bottom: 60px;
+}
+
+.sub-menu li{
+    border-bottom: 1px #ddd solid;
+}
+
+.sub-menu a{
+    color: #432;
+    padding: 10px;
+    display: block;
+}
+
+.sub-menu a:hover{
+    color: #0bd;
+}
+
+
+/*6. News 페이지 푸터부분*/
+footer{
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+
+footer p{
+    color: white;
+    font-size: 0.875rem;
+    cursor: pointer;/*커서가 올라가면 손가락 모양으로 바뀌게하는 속성*/
+}
+
+
+/*7. Menu 페이지 헤더*/
+/*Menu 페이지 헤더를 덮는 배경이미지*/
+#menu{
+    background-image: url('../images/menu-bg.jpg');
+    min-height: 100vh;
+}
+
+/*7.1 Menu페이지 헤더내용*/
+.menu-content{
+    max-width: 560px;
+    margin-top: 10%;
+}
+
+.menu-content .page-title{
+    text-align: center;
+}
+
+.menu-content p{
+    font-size: 1.125rem;
+    margin-top: 10px;
+}
+
+
+/*8. Menu 페이지 컨텐츠*/
+.grid{
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.big-box{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}/* 2 칸씩 셀 병합 시키기~ */
+
+.big-box img{
+    height: 94%;
+    width: 100%;
+}
+
+
+/*9. Contact 페이지 헤더부
+    Contact 페이지 헤더를 덮는 이미지*/
+#contact{
+    background-image: url(../images/contact-bg.jpg);
+    min-height: 100vh;
+}
+
+/*9.1 Contact 페이지 헤더내용*/
+form div{
+    margin-bottom: 14px;
+}
+
+form label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type='text'], input[type='email'], textarea{
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type='text'], input[type='email']{
+    width: 100%;
+    max-width: 240px;
+}
+
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+    resize: none;
+}
+
+input[type='submit']{
+    border: none;
+    line-height: 1;
+}
+
+/*10. Contact 페이지 컨텐츠부*/
+#location{
+    padding: 4% 0;
+}
+
+#location .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*10.1 Contact 페이지 내용부*/
+.location-info{
+    width: 22%;
+}
+
+.location-info p{
+    padding: 12px 10px;
+}
+
+/*10.2 Contact 페이지 지도부*/
+.location-map{
+    width: 74%;
+}
+
+/*11. 메인페이지 반응형 웹 적용*/
+@media screen and (max-width: 600px){
+    .page-title{
+        font-size: 2.5rem;
+    }
+    .main-nav{
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li{
+        margin: 0 20px;
+    }
+    .home-content{
+        margin-top: 20px;
+    }
+    .page-header{
+        flex-direction: column;
+        align-items: center;/*가로축정렬을 센터정렬*/
+    }
+}
+
+/*12. News 페이지 반응형 웹 적용*/
+@media screen and (max-width: 600px) {
+    .news-content{
+        flex-direction: column;
+    }
+    article, aside{
+        width: 100%;
+    }
+    
+}
+
+/*13. Menu 페이지 반응형 웹 적용*/
+/*하나의 항목이 하나의 그리드박스 차지하도록 변경(병합 해제)*/
+@media screen and (max-width: 600px) {
+    .menu-content{
+        margin-top: 20%;
+    }
+
+    .big-box{
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .big-box img{
+        height: auto;    
+    }
+}
+
+/*14. Contact 페이지 반응형 웹 적용*/
+@media screen and (max-width: 600px){
+    #contact .page-title{
+        margin-top: 40px;
+    }
+    
+    input[type='text'], input[type='email'], textarea{
+        min-width: 100%;
+    }
+    
+    #location .wrapper{
+        flex-direction: column;
+    }
+
+    .location-info, .location-map{
+        width: 100%;
+    }
+
+    .location-map iframe{
+        width: 100%;
+    }
+}

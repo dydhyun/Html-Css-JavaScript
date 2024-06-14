@@ -1,0 +1,47 @@
+/*
+ column-gap 속성 : 컬럼들 간의 간격을 조절
+ row-gap 속성 : 행들간의 간격을 조절
+ gap 속성 : 행 열 간격을 한 번에 조절
+*/
+.container {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(4,minmax(100px,1fr));
+    grid-template-rows: 100px 100px;
+    /* column-gap: 20px;
+    row-gap: 30px; */
+    /*행, 열(컬럼) 간격 순으로 지정한다*/
+    gap: 20px 60px;
+}
+
+.box1 {
+    background: red;
+}
+
+.box2 {
+    background: green;
+}
+
+.box3 {
+    background: blue;
+}
+
+.box4 {
+    background: brown;
+}
+
+.box5 {
+    background: violet;
+}
+
+.box6 {
+    background: yellow;
+}
+
+.box7 {
+    background: aqua;
+}
+
+.box8 {
+    background: lightgreen;
+}

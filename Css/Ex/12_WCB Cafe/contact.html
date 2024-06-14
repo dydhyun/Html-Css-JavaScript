@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCB Cafe-Contact</title>
+    <!--css리셋-->
+    <link rel="stylesheet" href="css/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--적용 할 글꼴-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher">
+    <!--파비콘 추가-->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!--9. Contact 페이지 헤더 영역
+    Contact 페이지 헤더를 덮는 이미지-->
+    <div id="contact" class="big-bg">
+        <header class="page-header wrapper">
+            <!--1.1 로고 영역-->
+            <h1>
+                <a href="index.html">
+                    <img class="logo" src="images/logo.svg" alt="WCB Cafe_Logo">
+                </a>
+            </h1>
+            <!--1.2 메뉴바 영역-->
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--9.1 Contact 페이지 헤더 내용부분-->
+        <div class="wrapper">
+            <h2 class="page-title">Contact</h2>
+            <form action="#">
+                <div>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div>
+                    <label for="message">메시지</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <input type="submit" class="button" value="전송">
+            </form>
+        </div>
+
+    </div>
+    <!--10. Contact 페이지 컨텐츠부분.(지도 들어갈 영역)-->
+    <section id="location">
+        <div class="wrapper">
+            <!--10.1 Contact 페이지 내용 부분-->
+            <div class="locatin-info">
+                <h3 class="sub-title">비트캠프 강남본원</h3>
+                <p>
+                    주소: 서울시 서초구 OO<br>
+                    OOOOOOOO 111-11<br>
+                    OOOO<br>
+                    전화번호: 000-0000-0000<br>
+                    영업시간: 08:30 ~ 22:00<br>
+                    휴무일: 매주 일요일
+                </p>
+            </div>
+            <!--10.2 Contact 페이지 지도 부분-->
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3604661452646!2d127.02645260654373!3d37.499415572056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca194d4bb162f%3A0x9612cf895f23eaca!2z67mE7Yq47Lqg7ZSEIOqwleuCqOuzuOybkA!5e0!3m2!1sko!2skr!4v1718346747675!5m2!1sko!2skr" width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <p>
+                <small>&copy; 2024 WCB Cafe</small><!--&copy; 특수기호 원문자c 표시-->
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>카테고리 : 가게 소개
