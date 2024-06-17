@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 구문</title>
+    <style>
+        .container{
+            width: 100px;
+            height: 100px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        const container = document.getElementsByClassName("container")[0];
+
+        const colorArr = ['red',"green",'blue',"yellow", 'violet'];
+        
+        let strDiv = "";
+        // 자바와 혼동해 String, int 로 쓰지않기 ~
+        for(let i = 0; i < 5; i++){
+            strDiv += `<div class="box" id="box${i}" style="background: ${colorArr[i]}"></div>`;
+            // strDiv += "<div class' ' "
+            // 작은따옴표로 감싸면 내부는 큰따옴표, 큰따옴표로 감싸면 작은따옴표 로 적어야된다~
+        }
+        console.log(strDiv);
+
+        container.innerHTML = strDiv;
+        // container.outerHTML = strDiv;
+
+    </script>
+</body>
+</html>

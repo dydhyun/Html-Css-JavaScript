@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var 변수의 문제점1 - 재 선언이 가능하다.</title>
+</head>
+<body>
+    <script>
+        // 1. var 변수는 중복 선언이 가능하다.
+        var x = 1;
+        var y = 2;
+        
+        var x = 1000;
+        
+        // 초기화 없는 중복선언은 무시
+        var y;
+        console.log(x);
+        console.log(y);
+        
+
+        // 2. let 은 중복 선언 불가
+        // let z = 100;
+        // let z = 20;
+
+        
+    </script>
+</body>
+</html>

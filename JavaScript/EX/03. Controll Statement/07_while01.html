@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while 구문</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+    // 1 ~ 100 까지 숫자 중에 2,3 의 공배수 모두 출력하는 while 문 만들기.
+    // 출력은 document.write() 를 이용해서 한 줄에 하나의 공배수 만 출력
+    
+    let index = 0
+    while(index++ < 101){
+        if(index % 6 == 0){
+            document.write(`<h4>${index} 은/는 2와 3의 공배수 입니다.</h4><br>`);
+        }
+    }
+
+    </script>
+</body>
+</html>

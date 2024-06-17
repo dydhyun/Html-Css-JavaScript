@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 조건문</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.getElementsByClassName("box")[0];
+        console.log(box);
+
+        const month = window.prompt("몇 월 입니까?");
+        
+        if(month == 12 || month == 1 || month == 2){
+            alert("겨울입니다.");
+            box.style.backgroundColor = "skyblue";
+        }
+        else if(month == 3 || month == 4 || month == 5){
+            alert("봄입니다.");
+            box.style.backgroundColor = "lightgreen";
+        }
+        else if(month == 6 || month == 7 || month == 8){
+            alert("여름입니다.");
+            box.style.backgroundColor = "yellow";
+        }else{
+            alert("가을 입니다.");
+            box.style.backgroundColor = "brown";
+        }
+    </script>
+</body>
+</html>

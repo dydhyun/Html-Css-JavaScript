@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch case 구문</title>
+</head>
+<body>
+    <a href="#" id="link"></a>
+    <script>
+        const link = document.getElementById("link");
+
+        const siteName = window.prompt("자주 접속하는 사이트는?");
+        let siteUrl;
+
+        switch(siteName) {
+            case '네이버':
+                siteUrl = 'https://www.naver.com';
+                break;
+            case '구글':
+                siteUrl = 'https://www.google.com';
+                break;
+            case '다음':
+                siteUrl = 'https://www.daum.net';
+                break;
+            default:
+                alert("잘못 입력하셨습니다.");
+                siteUrl = "#";
+        }
+        // 태그의 속성은 바로 css속성설정이 가능하다~
+        link.href = siteUrl;
+        
+        // innerText : 태그에 표출될 텍스트 지정
+        link.innerText = siteName;
+    </script>
+</body>
+</html>

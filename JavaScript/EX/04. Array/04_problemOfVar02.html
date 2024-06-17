@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var 변수의 문제점2 - var 변수는 함수 단위면서, 전역단위.</title>
+</head>
+<body>
+    <script>
+
+        // 1. var 변수는 함수 단위면서 전역단위
+        // 선언된 중괄호 밖을 벗어나도 가능하다.
+        var x = 1;
+        if(true){
+        var x = 1000;
+       }
+        
+        // 초기화 없는 중복선언은 무시
+        for(var i = 0; i < 100; i++){
+            
+        }
+        console.log(x);
+        console.log(i);
+        
+
+        // 2. let 은 블록 단위
+        let y = 10;
+        if(true){
+            let y = 100;
+        }
+
+        console.log(y);
+
+        for(let j = 0; j < 100; j++) {
+
+        }
+        
+        // 에러발생
+        console.log(j);
+    </script>
+    </script>
+</body>
+</html>

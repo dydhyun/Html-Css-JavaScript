@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript의 연산자</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 1. 산술연산자
+        const num1 = 10;
+        const num2 = 20;
+        let numStr = "10";
+        const str = "aaaa";
+
+        console.log(`num1 + num2 = ${num1 + num2}`);
+        console.log(`num1 - num2 = ${num1 - num2}`);
+        console.log(`num1 * num2 = ${num1 * num2}`);
+        console.log(`num1 / num2 = ${num1 / num2}`);
+        console.log(`num1 % num2 = ${num1 % num2}`);
+        console.log(`============================`);
+
+        
+        console.log(`numStr + num2 = ${numStr + num2}`);
+        console.log(`numStr - num2 = ${numStr - num2}`);
+        console.log(`numStr * num2 = ${numStr * num2}`);
+        console.log(`numStr / num2 = ${numStr / num2}`);
+        console.log(`numStr % num2 = ${numStr % num2}`);
+        console.log(`============================`);
+
+        // 숫자 값이 아닌 문자열일 때 문자열 결합 연산을 제외한 산술 연산은 
+        // 연산할 수 없음 (NaN) 을 표시한다.
+
+        console.log(`str + num2 = ${str + num2}`);
+        console.log(`str - num2 = ${str - num2}`);
+        console.log(`str * num2 = ${str * num2}`);
+        console.log(`str / num2 = ${str / num2}`);
+        console.log(`str % num2 = ${str % num2}`);
+        console.log(`============================`);
+
+
+        // 2. 대입 연산자
+        let num3 = 10;
+        
+        console.log(`num3 += 10 = ${num3 += 10}`);
+        console.log(`num3 -= 10 = ${num3 -= 10}`);
+        console.log(`num3 *= 10 = ${num3 *= 10}`);
+        console.log(`num3 /= 10 = ${num3 /= 10}`);
+        console.log(`num3 %= 10 = ${num3 %= 10}`);
+        console.log(`============================`);
+
+
+        // 3. 증감 연산자(++,--)
+        let num4 = 10;
+
+        console.log(`num4-- = ${num4--}`);
+        console.log(`++num4 = ${++num4}`);
+
+        // 숫자 값인 문자열도 증감 연산자를 사용할 수 있다.
+        console.log(`++numStr-- = ${++numStr}`)
+        console.log(`============================`);
+
+
+        // 4. 비교 연산자
+        const num5 = 101;
+        const numStr2 = "101";
+
+        // ==, !=, <=, >=, <, > 는 값의 비교만 가능(자료형은 비교하지 않는다.)
+        // 대소비교 (<=, >=, <, >) 는 값의 비교만 가능(자료형 비교불가)
+        console.log(`num5 == numStr2 => ${num5 == numStr2}`);
+        console.log(`num5 <= numStr2 => ${num5 <= numStr2}`);
+        
+        // ===, !== 는 값과 자료형 모두 비교한다.
+        console.log(`num5 === numStr2 => ${num5 === numStr2}`);
+        console.log(`============================`);
+ 
+
+        // 5. 삼항 조건 연산자
+        // getElementsByClassName() 메소드 : class 속성값으로 태그들을 선택
+        //                          같은 class 속성값을 가지고 있는 태그들을 배열 형태로 리턴.
+        let box = document.getElementsByClassName("box")[0]
+        // 무조건 배열 형태로 가져오기 때문에 인덱스 하나를 선택해야됨
+
+        num5 === numStr2 
+                ? box.style.backgroundColor = 'blue' 
+                : box.style.backgroundColor = 'red';
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-1</title>
+    <style>
+        div{
+            width: 600px;
+            border: 1px solid grey;
+        }
+        p , h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write(`<div><h1>3의 배수 찾기</h1><p>`);
+        let cnt = 0;
+        for(let i = 1; i < 101; i++){
+            if(i % 3 == 0){
+                document.write(`${i}, `);
+                cnt++;
+            }
+        }
+        document.write(`<br> 3 의 배수의 갯수: ${cnt}</p></div>`);
+        
+    </script>
+</body>
+</html>

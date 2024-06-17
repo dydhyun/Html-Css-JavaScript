@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var 변수의 문제점3 - 선언, 초기화, 사용 순서가 정해져 있지 않다.</title>
+</head>
+<body>
+    <script>
+        // 1. var 변수는 선언, 초기화, 사용의 순서를 지키지 않아도 된다.
+        // 호이스팅은 뒤에서 선언된 변수나 메소드를 위에서 끌어다 사용하는 것.
+        console.log(a);
+
+        a = 100;
+
+        console.log(a);
+
+        var a;
+
+
+        // 2. let 변수는 선언, 초기화, 사용의 순서를 지켜 사용해야 된다.
+        console.log(b);
+
+        b = 100;
+
+        console.log(b);
+
+        let b;
+
+    </script>
+</body>
+</html>

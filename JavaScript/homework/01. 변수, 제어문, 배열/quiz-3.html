@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-1</title>
+    <style>
+        p , h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let input = window.prompt("숫자 를 입력 하세요~");
+        document.write(`<h1>짝수일까, 홀수일까~</h1>`);
+        if(parseInt(input) % 2 == 0){
+            document.write(`<p>${input} 은/는 짝수 입니다.</p>`);
+        }else if(parseInt(input) % 2 == 1){
+            document.write(`<p>${input} 은/는 짝수 입니다.</p>`);   
+        }else{
+            document.write(`<p>숫자를 입력하세요.</p>`);
+        }
+    </script>
+</body>
+</html>

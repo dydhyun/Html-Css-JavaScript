@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while 구문</title>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+    // 사용자가 end 를 입력하기 전 까지 입력한 숫자를 모두 더해서 출력하는 프로그램 만들기.
+    // prompt 에서 사용자의 입력을 받고 입력 받은 값은 모두 string 타입이니까,
+    // parseInt 메소드를 이용해 숫자타입으로 변경 후 덧셈 연산.
+    
+    let sum = 0;
+    while(true){
+        let input = window.prompt("숫자를 입력하세요. end 입력 시 종료");
+        if(input.toLowerCase() == "end"){
+            break;
+        }//  else if(typeof parent(input) == typeof "dd"){
+        //     window.prompt("숫자 입력 하세요.");
+        // }
+        sum += parseInt(input);
+        
+    }
+    document.write(`<h4>입력의 총 합은 ${sum} 입니다.</h4>`);
+
+    </script>
+</body>
+</html>

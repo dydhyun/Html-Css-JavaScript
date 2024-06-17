@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 구문</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container"></div> -->
+    <script>
+        const container = document.getElementsByClassName("container")[0];
+
+        
+        // const colorArr = ['red',"green",'blue',"yellow", 'violet'];
+
+        // 자바와 혼동해 String, int 로 쓰지않기 ~
+        for(let i = 2; i < 10; i++){
+            document.write(`<div class="container"><h1>${i}단</h1>`);
+            for(let j = 1; j < 10; j++){ 
+                document.write(`${i} * ${j} = ${i*j}`,`<br>`);
+// , 로 이어적으면 매개변수 갯수에 상관 없이 문자열 결합을 하여 하나의 문자열로 반환한다.
+                }
+                document.write(`<br></div>`);
+            // strDiv += "<div class' ' "
+            // 작은따옴표로 감싸면 내부는 큰따옴표, 큰따옴표로 감싸면 작은따옴표 로 적어야된다~
+        }
+
+    </script>
+</body>
+</html>

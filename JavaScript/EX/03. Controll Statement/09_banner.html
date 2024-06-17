@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 배치하기</title>
+    <style>
+        #btnStart {
+            padding: 50px;
+            margin-bottom: 5px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnStart" type="button">배치 시작하기</button>
+    <div class="image-container">
+        <img src="banners/1.png" alt="banner" class="banner">
+        <img src="banners/2.png" alt="banner" class="banner">
+        <img src="banners/3.png" alt="banner" class="banner">
+        <img src="banners/4.png" alt="banner" class="banner">
+        <img src="banners/5.png" alt="banner" class="banner">
+        <img src="banners/6.png" alt="banner" class="banner">
+        <img src="banners/7.png" alt="banner" class="banner">
+        <img src="banners/8.png" alt="banner" class="banner">
+    </div>
+    <script>
+        const btn = document.getElementById("btnStart");
+
+        // 버튼 클릭 이벤트 생성
+        btn.addEventListener('click', () => {
+            // 버튼을 클릭했을 때 일어날 동작이나 코드를 작성한다.
+            const images = document.getElementsByClassName("banner");
+
+            // top: 200, 200, 200, 400, 400, 400, 600, 600
+            // left: 200, 400, 600, 200, 400, 600, 200, 400
+            for(let i = 0; i < images.length; i++){
+                images[i].style.top = `${(parseInt(i / 3) + 1) * 200}px`;
+                images[i].style.left = `${(parseInt(i % 3) + 1) * 200}px`;
+            }
+        });
+
+
+    </script>
+</body>
+</html>

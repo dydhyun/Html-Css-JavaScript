@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript의 배열</title>
+</head>
+<body>
+    <script>
+        // 1. 배열의 선언
+        // JavaScript에서 배열은 무조건 가변배열이며 길이를 지정하지 않는다.
+        // 다른 자료형의 값들을 하나의 배열에 저장해서 사용할 수 있다.
+        const arr1 = ['hello', 100, false, null, {
+            val1: 1,
+            val2: 2
+        }];
+        
+        console.log(arr1);
+
+
+        // 2. 배열의 사용
+        // 인덱스로 접근을 해서 배열의 값을 사용한다.
+        console.log(arr1[0]);
+        console.log(arr1[1]);
+        console.log(arr1[2]);
+        console.log(arr1[3]);
+        console.log(arr1[4]);
+
+
+        // 3. JavaScript의 배열은 가변 배열이기 때문에
+        // 빈 배열로 선언 후 값을 추가해서 사용할 수도 있다.
+        const arr2 = [];
+                
+        //push() 메소드 : 배열의 마지막 요소를 추가하는 메소드
+        arr2.push('a');
+        arr2.push('b');
+
+        // length 속성: 배열에 저장된 값의 개수를 리턴
+        console.log(arr2.length);
+
+
+        // 4. 배열의 length 를 이용한 for 문
+        for(let i = 0; i < arr2.length; i++){
+            console.log(arr2[i]);
+        }
+
+
+        // 5. JavaScript의 향상된 for문(for(in) 구문) - 인덱스를 하나씩 가져온다
+        // for(let index in arr2)
+        for(let index in arr2){
+            console.log(index);
+            console.log(arr2[index]);
+        }
+
+
+        // 5. JavaScript의 향상된 for문(for(of) 구문) - 요소를 하나씩 꺼내온다
+        // for(let index in arr2)
+        for(let element of arr2){
+            console.log(element);
+        }
+
+    </script>
+</body>
+</html>
