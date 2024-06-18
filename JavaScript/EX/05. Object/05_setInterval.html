@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        button{
+            position: absolute;
+            top: 120px;
+        }
+        #stopBtn{
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="startBtn">인터벌시작</button>
+    <button type="button" id="stopBtn">인터벌종료</button>
+    <script>
+        let left = 0;
+        let interval;
+
+        const startBtn = document.getElementById("startBtn");
+        const stopBtn = document.getElementById("stopBtn");
+
+        // 1초마다 box가 오른쪽으로 20px씩 이동
+        startBtn.addEventListener("click", () => {
+            // setInterval 메소드: 지정한 시간마다 계속 반복하는 동작을 만들수 있는 메소드
+            // 지정하는 시간은 ms단위로 단위는 작성하지 않고 숫자만 넣어준다.
+            interval = setInterval(() => {
+                // 반복해서 동작할 기능을 만들어주는 영역/콜백함수영역
+                const box = document.getElementsByClassName("box")[0];
+
+                left += 20;
+
+                box.style.left = `${left}px`; 
+            }, /*반복주기*/ 1000);
+        });
+
+        stopBtn.addEventListener("click", () => {
+            if(interval !== null && typeof interval !== 'undefined') {
+                // clearInterval 메소드: 생성되어있는 interval 삭제하는 메소드
+                clearInterval(interval);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 DOM 선택자</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div id="box1"></div>
+    <div id="box2">
+        <input type="text" name="username">
+        <input type="text" name="password">
+        <input type="text" name="nickname">
+    </div>
+
+    <script>
+        // 1. getElementsByClassName("클래스 속성값") : 매개변수 지정된 클래스 속성값을
+        // 가지고 있는 태그들을 모두 선택해서 배열에 담아 리턴
+        const boxes = document.getElementsByClassName("box");
+
+        console.log(boxes);
+        
+        for(let ele of boxes){
+            console.log(ele);
+        }
+
+        const colorArr = ['red', 'green', 'blue'];
+
+        for(let idx in boxes) {
+            if(!isNaN(idx)) {
+                boxes[idx].style.width = `${(parseInt(idx) + 1) * 100}px`;
+                boxes[idx].style.height = `${(parseInt(idx) + 1) * 100}px`;
+                boxes[idx].style.backgroundColor = colorArr[idx];
+            }
+        }
+
+
+        // 2. getElementsById("아이디 속성값") ; 매개변수로 지정된 아이디 값을 갖는 태그를 선택
+        // 하는 선택자, 웹 문서에서 아이디 속성값은 중복되면 안되기 떄문에 하나의 태그만 선택된다.
+
+        const box1 = document.getElementById("box1");
+        const box2 = document.getElementById("box2");
+
+        console.log(box1);
+        console.log(box2);
+
+        box1.style.width = '50px';
+        box1.style.height = '50px';
+        box1.style.border = '1px solid red';
+
+        box2.style.width = 'auto';
+        box2.style.height = 'auto';
+        box2.style.border = '10px dashed lightgreen';
+
+        // 3. getElementsByTagName("태그이름"): 매개변수로 지정된 태그에 해당되는
+        //  모든 태그를 선택해서 배열에 담아서 리턴
+        const divs = document.getElementsByTagName("div");
+
+        console.log(divs);
+
+        // 4. querySelector("css 선택자"): 매개변수로 지정된 css 선택자에 해당되는 
+        // 태그 하나만 선택해서 리턴
+        // 해당되는 태그가 여러개일 때는 첫번째 태그만 선택해서 리턴한다.
+        // 매개변수에는 모든 css선택자를 사용할 수 있다.
+        // 아이디 선택자(#아이디), 클래스 선택자(.클래스), 전체 선택자,
+        // 가상클래스, 속성선택자, 형제선택자 등
+        const querybox2 = document.querySelector("#box2");
+        console.log(querybox2);
+
+        const queryname = document.querySelector("input[name='password']");
+        console.log(queryname);
+
+        // input 태그가 여러개여도 배열로 만드는게 아니고 첫 번째 태그만 리턴한다.
+        const queryinput = document.querySelector("input");
+        console.log(queryinput);
+
+        
+        // 5. querySelectorAll("css 선택자") : querySelector와 사용법은 동일하지만,
+        //                          배열로 리턴되는 메소드
+        const inputArr = document.querySelectorAll("input");
+        console.log(inputArr);
+        
+        // 선택자에 해당하는 태그가 하나여도 배열로 리턴한다.
+        const querybox2Arr = document.querySelectorAll("#box2");
+        console.log(querybox2Arr);
+
+    </script>
+</body>
+</html>

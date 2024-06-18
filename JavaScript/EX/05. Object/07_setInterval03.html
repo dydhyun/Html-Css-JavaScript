@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+</head>
+<body>
+    <h1 class="time"></h1>
+    <script>
+        const nowDateTime = new Date();
+        let hour = nowDateTime.getHours();
+        let minute = nowDateTime.getMinutes();
+        let second = nowDateTime.getSeconds();
+        const time = document.getElementsByClassName("time")[0];
+        
+        console.log(nowDateTime);
+        
+        const convertZeroTime = (time) => {
+            let timeStr = time < 10 ? `0${time}` : time;
+
+            return timeStr;
+        }// 화살표함수 호이스팅 불가능
+        
+        time.innerText = `${convertZeroTime(hour)}:${convertZeroTime(minute)}:${convertZeroTime(second)}`;
+
+        let interval = setInterval(() => {
+            second++;
+
+            if(second >= 60) {
+                minute++;
+                second = 0;
+            }
+
+            if(minute >= 60) {
+                hour++;
+                minute = 0;
+            }
+
+            if(hour >= 24) {
+                hour = 0;
+            }
+
+            time.innerText = `${convertZeroTime(hour)}:${convertZeroTime(minute)}:${convertZeroTime(second)}`;
+        }, 1000);
+    </script>
+</body>
+</html>

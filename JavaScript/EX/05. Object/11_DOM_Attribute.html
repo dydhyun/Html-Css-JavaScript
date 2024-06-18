@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 객체 속성 조작</title>
+    <style>
+        .box12 {
+            width: 200px;
+            height: 200px;
+            color: lightcyan;
+            background: violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM 객체 속성 조작</h1>
+    <h2>DOM 객체 속성 조작</h2>
+    <div class="container1" id="container1">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+    <div class="container2" id="container2">
+        <div class="box6">
+            <p>aaa</p>
+        </div>
+        <div class="box7">
+            <p>bbb</p>
+        </div>
+        <div class="box8">
+            <p>ccc</p>
+        </div>
+        <div class="box9">
+            <p>ddd</p>
+        </div>
+        <div class="box10">
+            <p>eee</p>
+        </div>
+    </div>
+    <div class="box11" style="width: 100px; height: 100px; background: blue; color: white;"></div>
+    <div class="box12"></div>
+    <input type="text" id="username">
+    <script>
+        // 1. css 속성(style) 확인 및 변경
+        const box11 = document.querySelector(".box11");
+
+        // 1-1. css 속성 값 확인
+        // inline style만 가능
+        console.log(box11.style.width);
+        console.log(box11.style.height);
+        console.log(box11.style.color);
+        console.log(box11.style.backgroundColor);
+
+        // 내부/외부 스타일 시트는 getComputedStyle("태그선택변수"); 메소드를 통해서 가져온다.
+        const box12 = document.querySelector(".box12");
+        const box12Style = getComputedStyle(box12);
+        console.log(box12Style.width);
+        console.log(box12Style.height);
+        console.log(box12Style.color);
+        console.log(box12Style.backgroundColor);
+
+        // 1-2. css 속성 변경하기
+        const container1 = document.querySelector("#container1");
+
+        // JavaScript에서는 rgb 값도 그대로 적용가능하다.
+        container1.style.backgroundColor = box12Style.backgroundColor;
+        container1.style.width = '1000px';
+        container1.style.height = '1000px';
+
+        // 2. 태그의 속성 확인 및 변경
+        // 2-1. 태그의 속성 값 확인
+        console.log(container1.id);
+        console.log(container1.className);
+
+        // getAttribute("속성이름"): 매개변수로 전달된 속성이름에 지정된 속성 값 리턴하는 메소드
+        console.log(container1.getAttribute("id"));
+        console.log(container1.getAttribute("class"));
+
+        // 2-2. 태그의 속성값 변경
+        const box1 = document.querySelector(".box1");
+
+        box1.className = "box100";
+
+        // setAttribute("속성이름", "속성 값"): 태그에 속성이름에 지정된 속성값을 
+        //                                     두 번째 매개변수인 속성값으로 변경/추가하는 메소드
+        //                                     이미 지정된 속성이 있으면 속성 값 변경
+        //                                     지정된 속성이 없으면 속성 값 추가
+        const username = document.querySelector("#username");
+
+        username.setAttribute("type", "password");
+        console.log(username.getAttribute("type"));
+
+        username.setAttribute("name", "username");
+        console.log(username.getAttribute("name"));
+
+        // 3. 태그의 class 추가 및 삭제
+        // classList: 태그에 지정된 클래스 목록(배열로) 가져오는 속성
+        const box2 = document.querySelector(".box2");
+
+        console.log(box2.classList);
+
+        // classList.add("클래스명"): 해당 태그에 새로운 클래스를 추가하는 메소드
+        // classList.remove("클래스명"): 해당 태그에서 매개변수로 지정된 클래스를 삭젝하는 메소드
+        box2.classList.add("box12");
+        console.log(box2.classList);
+
+        box2.classList.remove("box2");
+        console.log(box2.classList);
+
+        // 4. 선택된 태그의 모든 하위태그 확인(innerHTML)
+        const container2 = document.querySelector("#container2");
+
+        console.log(container2.innerHTML);
+
+        // 5. 선택된 태그의 모든 하위태그를 삭제하고 새로운 태그 추가(innerHTML)
+        // container2.innerHTML = `<div><p>fff</p></div>`;
+
+        // 6. 선택된 태그의 모든 하위 텍스트 확인(innerText/textContent)
+        console.log(container2.innerText);
+        const h2 = document.querySelector("h2");
+        console.log(h2.innerText);
+        // textContent 공백도 그대로 표출
+        console.log(container2.textContent);
+
+        // 7. 선택된 태그의 모든 하위 텍스트/태그 삭제하고 새로운 텍스트를 추가(innerText/textContent)
+        container2.innerText = "fff";
+        h2.textContent = "DOM 객체는 BOM 객체의 하위 객체이다.";
+    </script>
+</body>
+</html>

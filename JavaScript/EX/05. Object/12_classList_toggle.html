@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList.toggle()</title>
+    <style>
+        .active {
+            background: red;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="activeBtn">토글버튼</button>
+    <script>
+        // classList.toggle("클래스명"): 해당 태그가 클래스를 가지고 있으면 클래스를 삭제
+        //                               가지고 있지 않으면 추가하는 메소드
+        const activeBtn = document.querySelector("#activeBtn");
+
+        activeBtn.addEventListener("click", () => {
+            const box = document.querySelector(".box");
+
+            box.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

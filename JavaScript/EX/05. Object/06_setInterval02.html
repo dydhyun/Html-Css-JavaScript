@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval 02</title>
+</head>
+<body>
+    <button type="button" id="stopBtn">타이머 종료</button>
+    <h1 class="time"></h1>
+    <script>
+        let hour = 0;
+        let minute = 0;
+        let second = 0;
+        let interval;
+
+        const stopBtn = document.getElementById("stopBtn");
+
+        interval = setInterval(() => {
+            const time = document.getElementsByClassName("time")[0];
+
+            second += 1;
+            if(second >= 60){
+                minute += 1;
+                second = 0;
+            }
+            if(minute >= 60){
+                hour += 1;
+                minute = 0;
+            }
+            // time.innerText = 
+            //     (` ${hour < 10 ? `0${hour}`: `${hour}`} : ${minute < 10 ? `0${minute}`: `${minute}`} : ${second < 10 ? `0${second}`: `${second}`}`);
+
+            
+            const convertZeroTime = (time) => {
+                let timeStr = time < 10 ? `0${time}`: time;
+
+                return timeStr;
+            }
+            
+            time.innerText =
+            (`${convertZeroTime(hour)}:${convertZeroTime(minute)}:${convertZeroTime(second)}`);
+
+            // time.innerText = (`${Date1.getHours}:${Date1.getMinutes}:${Date1.getSeconds}`);
+            // const date2 = new Date(1999,1,1, hour,minute,second);
+            // date2.setHours(hour, minute, second);
+            // time.innerText = (`${date2.getHours()}`);
+            // console.log(date2);
+
+
+        }, 1000);
+    
+
+        stopBtn.addEventListener("click", () => {
+            if(interval !== null && typeof interval !== 'undefined') {
+                // interval 이 null 이면 에러가 발생하기 때문에 notNull 조건 추가.
+                // clearInterval 메소드: 생성되어있는 interval 삭제하는 메소드
+                clearInterval(interval);
+            }
+        });
+    </script>
+</body>
+</html>

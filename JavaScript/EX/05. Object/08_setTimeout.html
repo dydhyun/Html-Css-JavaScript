@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="btn">clear timeout</button>
+    <script>
+        // function moveBox() {
+        //     // setTimeout 메소드: 지정한 시간 후에 한 번만 동작하는 메소드
+        //     setTimeout(() => {
+        //         const box = document.getElementsByClassName("box")[0];
+
+        //         box.style.left = `50px`;
+        //     }, 1000);
+        // }
+
+        // 재귀함수로 setInterval처럼 만들기
+        let left = 0;
+        let timeout;
+        function moveBox() {
+            const box = document.getElementsByClassName("box")[0];
+            left += 50;
+            box.style.left = `${left}px`;
+            // setTimeout 메소드: 지정한 시간 후에 한 번만 동작하는 메소드
+            timeout = setTimeout(() => {moveBox();}, 1000);
+        }
+
+        moveBox();
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            if(timeout !== null && typeof timeout !== 'undefined') {
+                clearTimeout(timeout);
+            }
+        });
+    </script>
+</body>
+</html>

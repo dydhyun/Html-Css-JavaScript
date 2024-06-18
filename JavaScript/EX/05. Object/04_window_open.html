@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업열기</title>
+</head>
+<body>
+    <button type="button" id="btn">팝업열기</button>
+    <script>
+        const btn = document.getElementById("btn");
+
+        // 이벤트를 등록할 때 동작 콜백 함수를 지정할 때
+        // 매개변수로 event 객체를 받아올 수 있다.
+        btn.addEventListener("click", (event) => {
+            console.log(event);
+            // event 객체 속성 중에 target이라는 속성은 이벤트가 발생한 DOM 객체
+            console.log(event.target);
+
+            // const button = event.target;
+            // button.innerText = "클릭하세요.";
+
+            // window.open("url") 메소드 : url 로 주어진 사이트를 띄운 팝업창을 여는 메소드.
+            window.open("https://www.naver.com");
+        });
+    </script>
+</body>
+</html>

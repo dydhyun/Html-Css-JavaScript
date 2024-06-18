@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator 객체, screen 객체, history 객체</title>
+</head>
+<body>
+    <button type="button" id="btn">페이지이동</button>
+    <script>
+        // 1. navigator 객체 : 브라우저의 정보
+        //                  (사용자가 사용하고 있는 os, 브라우저 정보 등)을 받아오는 객체
+        const osInfo = navigator.userAgent;
+        console.log(osInfo);
+
+        if(osInfo.toLowerCase().indexOf("windows") >= 0){
+            console.log("현재 사용자는 windows 를 사용중");
+        } else if(osInfo.toLowerCase().indexOf("macintosh") >= 0){
+            console.log("현재 사용자는 MacOs 를 사용중");
+        } else if(osInfo.toLowerCase().indexOf("android") >= 0){
+            console.log("현재 사용자는 android 를 사용중");
+        } else if(osInfo.toLowerCase().indexOf("iphone") >= 0){
+            console.log("현재 사용자는 ios 를 사용중");
+        }
+
+        // 2. screen 객체 : 현재 사용중인 모니터의 정보를 가져오는 객체
+        // 현재 사용중인 모니터의 가로길이, 세로길이
+        const screenWidth = screen.width;
+        const screenHeight = screen.height;
+        
+        console.log(`모니터 가로길이 : ${screenWidth}, 모니터 세로길이 : ${screenHeight}`);
+
+        // 3. history 객체 : 현재 탭의 방문기록을 가져오는 객체
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () =>{
+            // history.back() : 뒤로가기
+            // history.back();
+
+            // history.forward() : 앞으로 가기
+            // history.forward();
+
+            // history.go(숫자) : 숫자가 음수면 숫자만큼 뒤로가기, 양수면 숫자만큼 앞으로가기
+            history.go(3);
+
+
+
+
+        })
+    </script>
+</body>
+</html>

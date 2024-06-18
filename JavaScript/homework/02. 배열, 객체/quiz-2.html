@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 구하기</title>
+</head>
+<body>
+    <div class="div0"></div>
+    <script>
+        const arr = [0,0,0,0,0,0,0];
+        
+        const myArr = [0,0,0,0,0,0,0];
+        
+        const div = document.getElementsByClassName("div0")[0];
+        for(let i = 0; i < arr.length; i++){
+            let num;
+            do {
+                num = Math.round(Math.random() * 46);
+            } while (arr.includes(num));  // 중복 확인 로직
+            arr[i] = num;
+        }
+     
+     
+        for(let i = 0; i < arr.length; i++){
+            myArr[i] = parseInt(window.prompt(`로또번호 입력하세요;`));
+        }
+           
+
+        const bnsArr = arr[6];
+        const myBnsArr = myArr[6];
+
+        arr.length = 6;
+        myArr.length = 6;
+        arr.sort(function(a,b){
+            return a - b;
+        });
+        myArr.sort(function(a,b){
+            return a - b;
+        });
+
+        
+        let cnt = 0;
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j < arr.length; j++){
+                if(arr[i] == myArr[j]){
+                    cnt++;
+                }
+            }
+        }
+
+        document.write(`이번주 로또 번호 : <b>${arr} 보너스 번호 ${bnsArr}</b> 
+        ,<br>
+         입력 로또 번호 : <b>${myArr} 보너스 번호 ${myBnsArr}</b> ${cnt}`);
+
+        // div.innerText = 
+        //     (`이번주 로또 번호 : ${arr} 보너스 번호 ${bnsArr}
+        //     입력 로또 번호 : ${myArr} 보너스 번호 ${myBnsArr}`);
+
+        if(cnt == 4){
+            document.write("4등");
+        }else if (cnt == 5){
+            if(bnsArr == myBnsArr){
+                document.write("2등");
+            } else{
+                document.write("3등")
+            }
+        }else if (cnt == 6){
+            document.write("1등");
+        }else{
+            document.write("꽝.");
+        }
+
+    </script>
+</body>
+</html>
