@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 관련 이벤트</title>
+    <style>
+        .pwTxt {
+            color: red;
+            font-size: 0.75rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="join-form">
+        <div>
+            <label>아이디
+                <input type="text" name="username" id="username">
+            </label>
+        </div>
+        <div>
+            <label>비밀번호
+                <input type="password" name="password" id="password">
+            </label>
+            <p class="pwTxt">비밀번호는 특수문자, 숫자, 영문자 조합의 8자리 이상으로 지정하세요.</p>
+        </div>
+        <input type="submit" value="회원가입">
+    </form>
+    <script>
+        const username = document.querySelector("input[name='username']");
+        const password = document.querySelector("input[name='password']");
+        const joinForm = document.querySelector("#join-form");
+
+        let idValidation = false;
+
+        // 1. change 이벤트
+        // input 태그에서 사용되며 input의 value 값이 변경되고
+        // input에서 focus를 잃었을 때 발생하는 이벤트
+        // blur 이벤트와 비슷하게 동작한다.
+        username.addEventListener("change", (e) => {
+            console.log(e.target.value); // 포커스를 잃을 때 이벤트 발생해 콘솔에 찍힌다
+            if(e.target.value.length < 8 || e.target.value.length > 20) {
+                alert("아이디는 8자리이상 20자이하로 지정해주세요.");
+                idValidation = false;
+                username.focus();
+                return;
+            }
+
+            idValidation = true;
+        });
+        
+        // change 이벤트 - 값이 변해야 이벤트 발생. blur 이벤트 - focus 잃으면 이벤트 발생
+
+        // 2. blur 이벤트: 
+        // input에서 사용되는 이벤트로 input에서 focus를 잃었을 때 발생하는 이벤트
+        let passwordValidation = false;
+
+        password.addEventListener("blur", (e) => {
+            e.target.style.backgroundColor = '#fff';
+            let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{8,15}$/;
+
+            const pwTxt = document.querySelector(".pwTxt");
+
+            if(!reg.test(e.target.value)) {
+                pwTxt.style.display = 'block';
+                passwordValidation = false;
+                password.focus();
+                return;
+            }
+
+            pwTxt.style.display = 'none';
+            passwordValidation = true;
+        });
+
+        username.addEventListener("blur", (e) => {
+            e.target.style.background = "#fff";
+        });
+
+        // 3. focus 이벤트
+        // input 사용되는 이벤트로 input 태그가 focus가 갔을 때 발생하는 이벤트
+        password.addEventListener("focus", (e) =>{
+            e.target.style.backgroundColor = 'lightgreen';
+        })
+        username.addEventListener("focus", (e) =>{
+            e.target.style.backgroundColor = 'lightblue';
+        })
+
+        // 4. submit 이벤트
+        // form 태그에서 사용되며 form이 submit 되기 직전에 발생하는 이벤트
+        // 04_keyboard_event 파일의 키보드 이벤트 두개와 클릭 이벤트에 대한 처리를
+        // submit 이벤트 하나로 처리를 할 수 있다.
+        joinForm.addEventListener("submit", (e) => {
+            if(username.value === ''){
+                alert("아이디를 입력하세요.");
+                e.preventDefault();
+                return;
+            }
+            if(password.value === ''){
+                alert("비밀번호를 입력하세요.");
+                e.preventDefault();
+                return;
+            }
+            if(!idValidation){
+                alert("유효하지않은 아이디 입니다.");
+                e.preventDefault();
+                return;
+            }
+            if(!passwordValidation){
+                alert("유효하지않은 비밀번호 입니다.");
+                e.preventDefault();
+                return;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반함수와 화살표함수의 차이점2</title>
+</head>
+<body>
+    <button type="button" id="btn1">클릭</button>
+    <button type="button" id="btn2" style="margin-left: 30px;">클릭</button>
+    
+    <script>
+        // 1. 이벤트를 등록할 때도 일반함수에서는 이벤트가 발생한 태그를 this 로 받아올 수 있다.
+        const btn1 = document.querySelector("#btn1"); 
+        const btn2 = document.querySelector("#btn2");
+        let cnt1 = 0;
+        let cnt2 = 0;
+
+        // 이벤트를 등록할 때 콜백함수에서는 매개변수로 이벤트 자체를 객체로 받아올 수 있다. 
+        btn1.addEventListener("click", function(evnt) {
+            console.log(`this:`,this);
+            console.log(`evnt:`,evnt);
+            cnt1++;
+            this.innerText = `클릭한 횟수: ${cnt1}`;
+        });
+
+        // 2. 이벤트를 등록할 때 콜백함수를 화살표함수로 작성하면 this 객체 바인딩이 불가능하다.
+        btn2.addEventListener("click", (e) => {
+            console.log(`this:`,this);
+           
+            // this.innerText = `클릭한 횟수: ${++cnt2}`;
+
+            // 이벤트 객체의 target 속성을 통해서 이벤트가 발생한 태그를 선택한다.
+            console.log(`e.target:`,e.target);
+
+            e.target.innerText = `클릭한 횟수: ${++cnt2}`;
+        })
+    </script>
+
+</body>
+</html>

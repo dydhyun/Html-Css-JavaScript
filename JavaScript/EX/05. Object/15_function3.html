@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트에 색상입력 메소드 매핑하기</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+        button{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button type="button" onclick="changeColor()">색상변경</button>
+    </div>
+    
+    <script>
+        let input ="";
+
+        // 클릭이 발생했을 때 작동 할 콜백 함수
+        function changeColor(){
+            input = window.prompt("색상입력");
+
+            const box = document.querySelector(".box");
+            
+            const button = document.getElementsByTagName("button");
+            box.style.backgroundColor = input;
+            button.style.backgroundColor = input;// 수정하기
+        }
+
+        // const button = document.querySelector("button");
+
+        // button.addEventListener("click", function() {})
+        // button.addEventListener("click", () => {})
+
+    </script>
+</body>
+</html>

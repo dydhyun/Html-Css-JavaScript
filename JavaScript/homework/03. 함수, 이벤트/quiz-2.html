@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sumMulQuiz1</title>
+</head>
+<body>
+    <script>
+        const num1 = parseInt(window.prompt("비교 할 첫 번째 숫자"));
+        const num2 = parseInt(window.prompt("비교 할 두 번째 숫자"));
+        
+        compare(num1, num2);
+
+        function compare(num1,num2) {
+            
+            if(num1 > num2) {
+                alert(`${num1}이/가 ${num2}보다 큽니다.`);
+                return;
+            } else {
+                if(num1 == num2){
+                    alert(`${num1} 은/는 ${num2}와 같습니다.`);
+                }else{
+                    alert(`${num2}이/가 ${num1}보다 큽니다.`);
+                    return;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 클릭, 더블클릭 이벤트</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #btn1, #btn2 {
+            position: absolute;
+            top: 600px;
+        }
+
+        #btn1 {
+            left: 0;
+        }
+
+        #btn2 {
+            left: 100px;
+        }
+
+        .click {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="btn1">클릭</button>
+    <button type="button" id="btn2">더블클릭</button>
+    <script>
+        const box = document.querySelector(".box");
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+
+        // 1. 이벤트 등록 방식 1
+        // addEventListner 함수를 사용
+        btn1.addEventListener("click", (e) => {
+            box.classList.toggle("click");
+        });
+
+        // 2. 이벤트 등록 방식 2
+        // on이벤트 속성에 함수(동작)를 대입
+        let isDblClick = false;
+        btn2.ondblclick = (e) => {
+            isDblClick = !isDblClick;
+
+            // 얼리 리턴: 특정 조건일 때 함수를 종료시킨다.
+            //            if문 하나로 처리하기 위한 방식
+            //            프로그래밍도 사람이 처리하다보니까 else if문의 조건절이 완벽할 수
+            //            없기 때문에 if문으로만 조건을 처리하기 위해 고안된 방식
+            if(isDblClick) {
+                box.style.left = '300px';
+                box.style.top = '300px';
+                return;
+            }
+
+            box.style.left = 0;
+            box.style.top = 0;
+        };
+    </script>
+</body>
+</html>

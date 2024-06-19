@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 무브 이벤트</title>
+</head>
+<body>
+    <h1 class="coordinate">X : ㅇ, Y : ㅇ</h1>
+    <script>
+        const coordinate = document.querySelector(".coordinate");
+
+        // 웹 문서 자체에 이벤트 등록
+        document.addEventListener("mousemove", (e) =>{
+            coordinate.innerText = `X : ${e.clientX}, Y : ${e.clientY}` ;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트</title>
+</head>
+<body>
+    <form action="/user/login" id="login-form">
+        <div>
+            <label>아이디
+                <input type="text" id="username" name="username">
+            </label>
+        </div>
+        <div>
+            <label>비밀번호
+                <input type="password" id="password" name="password">
+            </label>
+        </div>
+        <input type="submit" value="로그인">
+        <div>
+            <a href="https://www.naver.com" id="link">Naver</a>
+        </div>
+    </form>
+
+    <script>
+        const loginForm = document.querySelector("#login-form");
+        const username = document.querySelector("input[name='username']");
+        const password = document.querySelector("input[id='password']");
+        const link = document.querySelector("#link");
+        const submit = document.querySelector("input[value='로그인']");
+        
+        // 1. 키보드 이벤트 등록
+        username.addEventListener("keydown", (e) => {
+           console.log(e); 
+
+           if(e.keyCode === 13){
+            // form 에 submit 버튼이 존재한 채로
+            // input 창에서 엔터를 입력하면 form 이 서브밋 된다.
+            // 이벤트 객체의 preventDefault() 메소드를 통해
+            // 이벤트가 기존에 갖고있던 기능을 차단할 수 있다. 
+            e.preventDefault();
+
+            if(username.value === ''){
+                alert("아이디를 입력하세요.");
+                return;
+            }
+            if(password.value === ''){
+                alert("비밀번호를 입력하세요.");
+                return;
+            }
+
+            // 강제로 이벤트 발생시키기
+            loginForm.submit();
+
+           }
+
+        });
+        password.addEventListener("keydown", (e) => {
+           console.log(e); 
+
+           if(e.keyCode === 13){
+            // form 에 submit 버튼이 존재한 채로
+            // input 창에서 엔터를 입력하면 form 이 서브밋 된다.
+            // 이벤트 객체의 preventDefault() 메소드를 통해
+            // 이벤트가 기존에 갖고있던 기능을 차단할 수 있다. 
+            e.preventDefault();
+
+            if(username.value === ''){
+                alert("아이디를 입력하세요.");
+                return;
+                
+            }
+            if(password.value === ''){
+                alert("비밀번호를 입력하세요.");
+                return;
+            }
+
+            // 강제로 이벤트 발생시키기
+            loginForm.submit();
+
+           }
+
+        });
+
+        // 2. a태그의 기본 이벤트 막기
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.open(link.getAttribute(`href`));
+        });
+        
+        // submit 버튼 막기
+        submit.addEventListener("click", (e) => {
+            if(username.value == '' || password.value == ''){
+                e.preventDefault();
+                alert("빈칸을 입력하세요.");
+                return;
+            }
+            else{
+                e.submit();
+            }
+        });
+         
+        
+    </script>
+</body>
+</html>

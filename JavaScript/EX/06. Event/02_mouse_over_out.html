@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 오버, 아웃 이벤트</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        .orange {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+
+        // mouseover + mouseout = css의 hover와 같은 역할
+        // 1. mouseover: 특정 태그에 마우스 커서를 올렸을 때 발생하는 이벤트
+        box.addEventListener("mouseover", (e) => {
+            box.classList.add("orange");
+        });
+
+        // 2. mouseout: 특정 태그에서 마우스 커서를 뺏을 때 발생하는 이벤트
+        box.onmouseout = (e) => {
+            box.classList.remove("orange");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강제 이벤트 발생</title>
+</head>
+<body>
+    <div>
+        <button type="button" id="btn1">버튼1</button>
+    </div>
+    
+    <div>
+        <button type="button" id="btn2">버튼2</button>
+    </div>
+    <div>
+        <button type="button" id="btn3">버튼3</button>
+    </div>
+    <a href="https://www.naver.com" id="link">Naver</a>
+    <script>
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const btn3 = document.querySelector("#btn3");
+        // const link = document.querySelector("#link");
+        const a = document.querySelector("a");
+
+
+        let btn1ClickCnt = 0;
+        let btn2ClickCnt = 0;
+        btn1.addEventListener("click", (e) => {
+            alert(`btn1 클릭횟수 : ${++btn1ClickCnt}`);
+        });
+
+        
+        btn2.addEventListener("click", (e) => {
+            // btn1 을 강제로 클릭한 것 처럼 이벤트 발생시키기
+            btn1.click();
+            alert(`btn2 클릭횟수 : ${++btn2ClickCnt}`);
+        });
+
+        // btn3을 클릭 했을 때 naver로 이동하기
+        btn3.addEventListener("click", (e) => {
+            // link.click(); btn1 클릭효과를 준 link 클릭효과
+            window.open("https://www.naver.com");
+        });
+        
+        // a 태그 클릭시 btn1 클릭효과
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            btn1.click();
+        });
+
+
+    </script>
+</body>
+</html>

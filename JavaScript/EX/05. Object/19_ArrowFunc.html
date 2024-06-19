@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수는 익명함수 기반이라 호이스팅을 지원않는다.</title>
+</head>
+<body>
+    <script>
+        // 1. 화살표 함수의 정의
+        const add = (a,b) => {
+            // 리턴할 값이 없으면 return구문 사용 안해도 된다.
+            console.log(a + b) ;
+            // 리턴할 값이 있으면 return 구문 사용해라
+            return a + b;
+        }
+
+        // 2. 기능 구현부에 중괄호 블록 '{}' 대신 소괄호 블록'()'을 사용하면,
+        // 소괄호 블록 안의 내용이 바로 리턴된다.
+        // 소괄호 블록 안에는 세미콜론 ';' 을 사용할 수 없고, 리턴할 코드 한 줄만 작성 가능 하다.
+        const sub = (a, b) => (a - b);
+        
+        // 3. 기능 구현부에 괄호 블록이 없으면 해당 값이 바로 리턴된다.
+        const mul = (a, b) => a * b;
+
+        // 4. 매개변수가 없는 화살표 함수
+        const div = () => 10 / 3;
+        
+        // 5. 매개변수가 하나일 때는 매개변수를 감싸는 소괄호를 생략할 수 있다.
+        const mod = a => a % 2;
+
+        let result = add(10,20);
+        console.log(`add(10, 20) = ${result}`);
+
+        result = sub(10,20);
+        console.log(`sub(10, 20) = ${result}`);
+
+        result = mul(10,20);
+        console.log(`mul(10, 20) = ${result}`);
+
+        result = div();
+        console.log(`div() = ${result}`);
+        
+        result = mod(11);
+        console.log(`mod(11) = ${result}`);
+
+    </script>
+</body>
+</html>

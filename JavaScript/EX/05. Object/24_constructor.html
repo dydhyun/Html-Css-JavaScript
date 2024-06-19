@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수</title>
+</head>
+<body>
+    <script>
+        // 1. 일반함수를 생성자 함수로 사용해서 객체를 생성할 수 있다.
+        // 기본 생성자(매개변수가 없는 생성자)
+        function Car() {
+            
+        }
+
+        const car = new Car(); // 빈 Car 객체 생성
+
+        console.log(car);
+
+        // 2. 매개변수가 있는 생성자
+        // 매개변수를 통해서 객체의 속성을 만들어 줄 수 있고 추가로 생성자 함수에서
+        // 기능도 정의를 할 수 있다.
+        function CarConstructor(company, model, price) {
+            // 함수에서 this는 이 함수를 통해서 만들어지는 객체를 의미한다.
+            this.comp = company;
+            this.mode = model;
+            this.pric = price;
+
+            // 기능 정의
+            this.info = function(){
+                console.log(this.comp);
+                console.log(this.mode);
+                console.log(this.pric);
+            }
+        }
+        
+        // 매개변수가 있는 생성자 함수를 통한 객체 생성
+        const kiaCar = new CarConstructor('kia','k5','3000');
+        const hyundaiCar = new CarConstructor('hyundai','avante','3000');
+
+        console.log(kiaCar);
+        console.log(hyundaiCar);
+        kiaCar.info();
+        
+    </script>
+</body>
+</html>

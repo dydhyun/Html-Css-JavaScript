@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 함수</title>
+</head>
+<body>
+    <script>
+        function Car(company, model, price){
+            this.company = company;
+            this.model = model;
+            this.price = price;
+
+            // 1. 프로토타입에 함수 등록
+            // 일반적으로 등록하는 함수(기능)들은 객체가 생성될 때 마다
+            // 메모리에 함수가 하나씩 생성된다.
+            // 함수를 prototype에 등록을 하게 되면 객체가 생성될 때 마다 함수가 생성되지 않고
+            // 단 한 번만 생성돼서 메모리에 등록되고
+            // 해당 함수를 공유해서 사용하게 된다. (Java의 static과 유사한 느낌이다.)
+            Car.prototype.info = function(){
+                console.log(this.company);
+                console.log(this.model);
+                console.log(this.price);
+            }
+        }
+        const kiaCar = new Car('kia','k5',3001);
+        const hyundaiCar = new Car('hyundai','avante',3002);
+        
+        console.log(kiaCar);
+        console.log(hyundaiCar);
+        
+    </script>
+</body>
+</html>

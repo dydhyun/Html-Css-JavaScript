@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즉시 실행 함수</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        
+        // 1. 즉시 실행함수
+        // 웹 문서가 로드되면서 바로 실행되는 함수
+        // 한 번만 호출되고, 그 이후에는 사용 불가.
+        (function(color, marginLeft) {
+            const box = document.querySelector(".box");
+
+            box.style.backgroundColor = color;
+            box.style.marginLeft = marginLeft;
+        })("yellow", "300px");
+
+    </script>
+    
+</body>
+</html>

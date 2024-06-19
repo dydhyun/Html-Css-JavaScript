@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반함수와 화살표함수의 차이점</title>
+</head>
+<body>
+    <script>
+        // 1. 일반함수는 this 객체를 바인딩해서 사용할 수 있다.
+        const obj1 = {
+            num: 1,
+            increase: function() {
+                return ++this.num;
+            }
+        }
+
+        console.log(obj1.increase());
+        
+        // // 2. 화살표 함수는 this 객체를 바인딩 할 수 없다.
+        // const obj2 = {
+        //     num: 1,
+        //     increase: () => {
+        //         return ++this.num;
+        //     }
+        // }
+
+        const obj2 = {
+            num: 1,
+            increase: (a) => {
+                return ++a;
+            }
+        }
+
+        console.log(obj2.increase(obj2.num));
+
+    </script>
+</body>
+</html>
