@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스프레드 문법</title>
+</head>
+<body>
+    <script>
+        // 1. 배열의 스프레드 문법
+        // 배열의 요소들을 하나씩 펼쳐서 나열한다.
+        const arr = [1, 2, 3, 4, 5];
+
+        console.log(arr);
+        console.log(...arr); // 배열로 묶인 값들을 펼쳐서 보여준다
+    
+        // 2. 배열을 합칠 때도 스프레드 문법을 사용할 수 있다.
+        const newArr1 = arr.concat([6, 7]);
+        const newArr2 = [...arr, ...[6, 7]];
+        console.log(`newArr1: ${newArr1}`);
+        console.log(`newArr2: ${newArr2}`);
+
+        // 3. 객체의 스프레드 문법
+        // 객체의 속성들을 하나씩 펼쳐서 나열한다.
+        const obj = {
+          id: 1,
+          name: '홍길동',
+          year: 1,
+          result: 4.4  
+        };
+
+        const newObj = {
+            ...obj, major: '컴공'
+            // 새로운 속성 major: '컴공' 추가.
+        };
+
+        console.log(obj);
+        console.log(newObj);
+
+        // 3. 스프레드 문법은 변수로 받아 사용할 수 없다.
+        // const spread = ...obj;
+        
+
+    </script>
+</body>
+</html>

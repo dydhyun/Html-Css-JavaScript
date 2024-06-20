@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체의 비구조화 할당</title>
+</head>
+<body>
+    
+    <script>
+        const car = {
+            company: 'kia',
+            model: 'k5',
+            price: 3000
+        };
+        // 1. 객체의 비구조화 할당
+        // 객체의 비구조화할당 에서는 변수명과 객체의 속성명(키)를 맞춰준다.
+        const {model, price} = car;
+
+        console.log(model);
+        console.log(price);
+
+        // 2. 객체 배열에서의 비구조화 할당
+        const carArr = [{
+            id: 1,
+            company: 'kia',
+            model: 'k5',
+            price: 3000
+            },{
+            id: 2,
+            company: 'kia',
+            model: 'k7',
+            price: 4000
+            },{
+            id: 3,
+            company: 'kia',
+            model: 'k9',
+            price: 5000
+            },{
+            id: 4,
+            company: 'kia',
+            model: 'ev6',
+            price: 6000
+            },        
+        ];
+
+        const [car1, car2, ...restCars] = carArr;
+        console.log(car1);
+        console.log(car2);
+        console.log(restCars);
+
+        // 객체 배열에서 특정 객체의 특정 속성값만 비구조화 할당
+        const [, {id}] = carArr; // 첫 번째 객체는 스킵하고 두 번째 객체의 id 속성값을 가져옴
+        console.log(id);
+        
+        // 3. 중첩객체에서의 비구조화 할당
+        const user = {
+            name: '홍길동',
+            address:{
+                city: '서울',
+                zipcode: 11111
+            }
+        };
+
+        // const {city} = user.address;
+        const {address: {city}} = user;
+        console.log(city);
+
+        // 4. 객체의 비구조화 할당에서도 rest 파라미터 사용이 가능하다.
+        // rest 파라미터가 배열형태가 아닌 객체형태로 리턴된다.
+        const loc = {
+            address: '서울시 서초구',
+            x좌표: 90.1234,
+            y좌표: 123.4567 
+        };
+
+        const {address, ...restLoc} = loc;
+        console.log(address);
+        console.log(restLoc);
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6의 class</title>
+</head>
+<body>
+    <script>
+        // 1. class
+        // JavaScript의 클래스는 함수만 정의할 수 있고,
+        // 속성은 생성자 함수를 통해서 생성한다.
+        class Car{
+            // 1-1 생성자 함수
+            // 생성자 함수는 constructor 라는 키워드로만 생성한다.
+            constructor(company, model, price) {
+                this.company = company;
+                this.model = model;
+                this.price = price;
+            }
+
+            // 1-2 일반 함수
+            carInfo(){
+                console.log(`제조사: ${this.company}`);
+                console.log(`모델: ${this.model}`);
+                console.log(`가격: ${this.price}`);
+            }
+
+            // 1-3 static 키워드로 정적 함수 정의
+            static info(company, model, price){
+                console.log(`제조사: ${company}`);
+                console.log(`모델: ${model}`);
+                console.log(`가격: ${price}`);    
+            }
+            
+        }
+        
+        // 2. 클래스의 사용
+        // new 키워드와 생성자를 통해서 객체를 생성한 후에 사용한다.
+        const hyundaiCar = new Car('hyundai', 'avante', 3000);
+
+        console.log(hyundaiCar);
+        hyundaiCar.carInfo();
+
+        // 3. static 함수의 사용
+        Car.info('kia', 'k5', 3000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6의 논리 연산자의 단축 평가</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="btn">색상변경</button>
+
+    <script>
+        let isDone = false;
+        let message = "";
+        /*
+            1. 단축평가
+            논리연산식의 결과(true/false) 가 결정되는 시점의 값을 리턴한다.
+            1-1 false || 변수값 => || 뒤의 변수값이 논리 연산식의 결과를 결정하기 때문에
+                                    변수값이 리턴된다.
+        */
+       message = isDone || '성공';
+       console.log(message);
+
+       isDone = true;
+        /*
+            1-2 true || 변수값 => || 뒤의 변수값이 뭐가 되든 논리 연삭식의 결과가 true로
+                                    확정되기 때문에 true가 리턴된다.
+        */
+        message = isDone || '성공';
+        console.log(message);
+
+        /*
+            1-3 true && 변수값 => && 뒤의 변수값에 의해 논리 연산식의 결과가 결정되기 때문에
+                                && 뒤의 변수값이 리턴된다.
+        */
+       message = isDone && '성공';
+       console.log(message);
+       
+       /*
+        1-4 false && 변수값 => && 뒤의 변수값과는 상관없이 논리 연산식의 결과가 false로
+                            확정되기 때문에 false가 리턴된다.
+       */
+      isDone = false;
+      message = isDone && '성공';
+      console.log(message);
+      
+
+      let isClick = false;
+      
+      const box = document.querySelector(".box");
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", (e) => {
+        isClick = ! isClick;
+
+        if(isClick){
+            box.style.background = 'royalblue';
+            message = isClick && '배경색 변경';
+            alert(message);
+            return;
+        }
+        box.style.background = 'red'
+        message = isClick || '배경색 복구';
+        alert(message);
+
+      })
+
+    </script>
+
+</body>
+</html>

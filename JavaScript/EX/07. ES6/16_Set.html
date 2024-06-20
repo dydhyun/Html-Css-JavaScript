@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript의 Set</title>
+</head>
+<body>
+    <script>
+        // 1. 비어있는 Set 생성
+        const set1 = new Set();
+
+        console.log(set1);
+
+        // 2. 값이 있는 Set 생성
+        const set2 = new Set([1,2,3,4,5,1,1,1,1,1,2,3,2,3,2,3,2,3,2,3,4,5]);
+        console.log(set2);
+
+        // 3. Set이 나오기 전에 배열에서 중복값 삭제        
+        const arr = [1,2,3,4,5,1,1,1,1,1,2,3,2,3,2,3,2,3,2,3,4,5];
+        const newArr = arr.filter((num, idx, origin) => origin.indexOf(num) == idx);
+        // origin 배열자체를 가져와서 배열에서 처음 검색되는 수의 인덱스와 필터를 돌며 받아오는 idx비교
+        // 처음 받아오는 숫자면 true, 중복되면 false 가 나온다.
+        console.log(newArr);
+        
+        // 4. Set 등장 이후 중복값 제거
+        const newArr2 = [...new Set(arr)];
+        console.log(new Set(arr));
+        console.log(...new Set(arr));
+        console.log(newArr2);
+
+
+
+    </script>
+</body>
+</html>

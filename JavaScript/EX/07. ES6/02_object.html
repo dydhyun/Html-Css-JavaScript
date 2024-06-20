@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체에 추가된 기능 - 속성 축약 표현</title>
+</head>
+<body>
+
+    <script>
+        // 1. 속성 축약 표현
+        // 변수들을 만들어서 만든 변수들을 중괄호 블록으로 묶어주면
+        // 변수들의 이름이 키, 변수들의 값이 값으로 매핑된 객체를 생성할 수 있다.
+        const company = '현대';
+        const model = '아반떼';
+        const price = 3000;
+        
+        const car = {company, model, price};
+        
+        console.log(car);
+
+    </script>
+    
+</body>
+</html>

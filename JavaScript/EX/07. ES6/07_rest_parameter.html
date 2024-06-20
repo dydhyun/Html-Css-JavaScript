@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    
+    <script>
+        // 1. rest parameter는 함수로 전달되는 매개변수들을 배열로 묶어주는 기능
+        // ... 키워드와 변수명을 지정한다.
+        const add = (...rest_nums) => {
+            console.log(rest_nums);
+
+            let sum = 0;
+            for(let idx in rest_nums){
+                sum += rest_nums[idx];
+
+                console.log(sum);
+            }
+        }
+        add(1, 2, 3, 4, 5, 6, 7, 8, 9*9/9, 1000000);
+
+        add(18); // => [18] => 18
+        add(); // Array(0) => []
+
+        // 2. 특정 매개변수만 변수로 받고 나머지만 rest parameter 받기
+        const mul = (num1, num2, ...nums) => {
+            console.log(num1);
+            console.log(num2);
+            console.log(nums);
+
+            let result = 1;
+            
+            result = result * num1 * num2;
+
+            for(let idx in nums){
+                result *= nums[idx];
+            }
+            console.log(result);
+        }
+
+        mul(3,6,10);
+
+        mul(18); // Array(0) => NaN
+
+    </script>
+    
+</body>
+</html>

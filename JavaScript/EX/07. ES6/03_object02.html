@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체에 추가된 기능 - 계산된 속성 이름(동적 속성)</title>
+</head>
+<body>
+
+    <script>
+        // 1. ES5
+        // 문자열 결합을 통한 동적 속성 부여.
+        var i = 0;
+        var obj1 = {};
+
+        obj1['색상' + ++i] = 'red';
+        obj1['색상' + ++i] = 'yellow';
+        obj1['색상' + ++i] = 'green';
+        obj1['색상' + ++i] = 'blue';
+        obj1['색상' + ++i] = 'violet';
+        obj1['색상' + ++i] = 'black';
+        obj1['색상' + ++i] = 'white';
+        obj1['색상' + ++i] = 'grey';
+
+        console.log(obj1);
+        
+        // 2. ES6
+        // 템플릿 리터럴의 표현식 삽입 기능을 이용해서 동적 속성부여
+        let j = 0;
+        
+        const obj2 = {
+            [`색상${++j}`] : 'red',
+            [`색상${++j}`] : 'yellow',
+            [`색상${++j}`] : 'green',
+            [`색상${++j}`] : 'blue',
+            [`색상${++j}`] : 'violet',
+            [`색상${++j}`] : 'black',
+            [`색상${++j}`] : 'white',
+            [`색상${++j}`] : 'grey',           
+        };
+        console.log(obj2);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체에 추가된 기능 - 메소드 축약 표현</title>
+</head>
+<body>
+    <script>
+        
+        var obj1 = {
+            add : function(a, b) {
+                return a + b;
+            }
+        };
+        
+        const obj2 = {
+            add(a, b){
+                return a + b;
+            }
+        };
+        
+
+        const obj3 = {
+            add: (a, b) => {
+                return a + b;
+            },
+             sub : function(a, b){
+                return a - b;
+            }
+        };
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 고차함수 - filter</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {
+                id: 1,
+                name: '홍길동',
+                year: 2,
+                result: 3.2
+            },
+            {
+                id: 2,
+                name: '임꺽정',
+                year: 1,
+                result: 2.8
+            },
+            {
+                id: 3,
+                name: '장길산',
+                year: 3,
+                result: 1.7
+            },
+            {
+                id: 4,
+                name: '조병조',
+                year: 4,
+                result: 4.0
+            },
+        ];
+        
+        const newArr = arr.filter(st => st.year >= 2);
+
+        console.log(newArr);
+
+        // filter 함수를 이용해서 학년이 1, 3학년인 학생만 모아놓은 배열을 생성하세요.
+        const newArr2 = arr.filter(st => (st.year == 1 || st.year == 3));
+        console.log(newArr2);
+
+        
+        const newArr3 = arr.filter(st => {
+           if(st.year == 1 || st.year == 3)
+            return true;
+            else return false;
+        });
+        console.log(newArr3);
+
+    </script>
+</body>
+</html>

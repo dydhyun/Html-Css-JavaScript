@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript의 Map</title>
+</head>
+<body>
+
+    <script>
+        // 1. 비어있는 Map 생성
+        const map1 = new Map();
+        console.log(map1);
+        
+        // 2. 값이 있는 Map 생성
+        // 대괄호 안에 엔트리 를 넣어준다.
+        const map2 = new Map([['id', 1], ['name', '홍길동'], ['year', 3], ['result', 3.3]]);
+        console.log(map2);
+        
+        // 3. Map의 크기 확인은 size 속성
+        console.log(map2.size); // Map에 몇개의 엔트리가 있는지
+        
+        // size는 속성이기 때문에 비구조화 할당으로 받아올 수 있다.
+        const {size: mapSize} = map2;
+        console.log(`mapSize: ${mapSize}`);
+
+        // const {...restSize} = map2;
+        // console.log(`mapSize: ${restSize}`);  <= ??? 
+
+        const{size} = map2;
+        console.log(size);
+
+        // 4. Map에 데이터를 추가하는 set 함수
+        map1.set("id",1);
+        
+        // set 함수는 체이닝 기법을 지원한다.
+        map1.set("name", "장길산").set("year", 1).set("result", 2.9);
+        console.log(map1);
+
+        // set 함수로 존재하는 키로 다른 값을 넣어주면 덮어쓴다.
+        map2.set("name", "임꺽정");
+        console.log(map2);
+        
+        // 5. Map의 키는 모든 형태로 지정할 수 있다.
+        const obj1 = {
+            a: 'a',
+            b: 'b'
+        };
+
+        const obj2 = {
+            c: 'c',
+            d: 'd'
+        };
+
+        const map3 = new Map();
+        map3.set(obj1, "객체1");
+        // 키를 객체 형태로 잡을 수 있다.
+        console.log(map3);
+
+        // 6. Map의 벨류를 꺼내는 get("키")함수
+        // 매개변수로 받은 키에 해당하는 밸류값을 리턴한다.
+        console.log(map2.get("id"));
+        console.log(map3.get(obj1));
+        
+        // 존재하지 않는 키로 값을 꺼내려하면 undefined가 리턴된다.
+        console.log(map2.get("major"));
+        console.log(map3.get(obj2));
+
+        // 7. 키의 존재 여부를 확인하는 has("키") 함수.
+        // Map에 매개변수로 받아온 키가 존재하면 true, 없으면 false를 리턴
+        console.log(map2.has("id"));
+        console.log(map2.has("major"));
+        
+        // 8. 키로 데이터를 삭제하는 delete("키") 함수
+        // 매개변수로 받아온 키에 해당하는 데이터를 삭제
+        map2.delete("name");
+        console.log(map2);
+        
+
+        // 9. Map에 있는 모든 데이터를 삭제하는 clear() 함수.
+        map1.clear();
+        console.log(map1);
+
+    </script>
+    
+</body>
+</html>

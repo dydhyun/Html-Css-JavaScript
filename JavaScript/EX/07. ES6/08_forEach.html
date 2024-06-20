@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 고차함수 - forEach</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {
+                id: 1,
+                name: '홍길동',
+                year: 2,
+                result: 3.2
+            },
+            {
+                id: 2,
+                name: '임꺽정',
+                year: 1,
+                result: 2.2
+            },
+            {
+                id: 3,
+                name: '장길산',
+                year: 3,
+                result: 1.7
+            },
+            {
+                id: 4,
+                name: '조병조',
+                year: 4,
+                result: 4.4
+            }
+        ];
+        
+        arr.forEach(student => {
+            if(student.result >= 4.0){
+                console.log(`${student.name}학생의 학점은 A`);
+            }
+            else if(student.result >= 3.0){
+                console.log(`${student.name}학생의 학점은 B`);
+            }
+            else if(student.result >= 2.0){
+                console.log(`${student.name}학생의 학점은 C`);
+            } else{
+                console.log(`${student.name}학생의 학점은 D`);
+            }
+        });
+        
+    </script>
+</body>
+</html>
