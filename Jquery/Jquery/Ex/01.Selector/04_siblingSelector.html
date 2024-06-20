@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <ul class="grand-parent">
+        <li>Html/Css
+            <ul>
+                <li>Html</li>
+                <li>Css</li>
+                <li class="third">DOM</li>
+                <li>BOM</li>
+                <li>W3C</li>
+            </ul>
+        </li>
+        <li>JavaScript
+            <ul>
+                <li>ES5</li>
+                <li class="second">ES6</li>
+                <li>React</li>
+                <li>Vue</li>
+                <li>Angular</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        $(() => {
+            // 1. 형제 선택자
+            // 1-1 .priv(): 특정 태그 바로 앞의 형제 태그 선택
+            $(".third").prev().css("background","violet");
+            
+            // 1-2 next(): 특정 태그 바로 뒤의 형제 태그 선택
+            $(".third").next().css("border", "2px dotted grey");
+
+            // 1-3 siblings(): 특정 태그의 형제태그를 모두 선택
+            // 특정 태그 본인은 포함되지 않음.
+            $(".second").siblings().css("border", "2px solid royalblue");
+        });
+    </script>
+
+</body>
+</html>

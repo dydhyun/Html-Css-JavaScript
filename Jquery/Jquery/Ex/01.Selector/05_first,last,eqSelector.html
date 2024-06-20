@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <ul class="grand-parent">
+        <li>Html/Css
+            <ul class="html">
+                <li>Html</li>
+                <li>Css</li>
+                <li class="third">DOM</li>
+                <li>BOM</li>
+                <li>W3C</li>
+            </ul>
+        </li>
+        <li>JavaScript
+            <ul>
+                <li>ES5</li>
+                <li class="second">ES6</li>
+                <li>React</li>
+                <li>Vue</li>
+                <li>Angular</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <script>
+        $(() => {
+            // 1. 탐색 선택자.
+            // 선택된 태그들 중 첫번째 태그, 마지막 태그, index 번호에 해당되는 태그를
+            // 선택하는 선택자.
+            console.log($(".html li")); // html클래스 내부에 li태그를 다 가져올것
+
+            $(".html li").first().css("background", "lightgreen");
+            
+            $(".html li").last().css("background", "lightblue");
+
+            $(".html li").eq(2).css("background", "orangered");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모 선택자</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>
+            <ul>Html/Css
+                <li>Html</li>
+                <li>Css</li>
+            </ul>
+        </li>
+        <li>
+            <ul>JavaScript
+                <li>ES5</li>
+                <li class="child">ES6</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(() => {
+           // 1. 부모 선택자: 선택자.parent() 메소드로 선택자의 부모태그를 선택한다.
+           $(".child").parent().css("background", "orange"); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모 선택자</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul class="grand-parent">
+        <li>
+            <ul>Html/Css
+                <li>Html</li>
+                <li>Css</li>
+            </ul>
+        </li>
+        <li>
+            <ul>JavaScript
+                <li>ES5</li>
+                <li class="child">ES6</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(() => {
+           // 1. 자식 선택자: 선택자.children() 메소드로 선택자의 특정 자식태그를 선택한다.
+           $(".grand-parent").children("li").css("background", "green"); 
+        //    $(".grand-parent > li").css("background", "lightgreen");
+
+            // 2. 자손 선택자
+            $(".grand-parent li").css("border", "1px solid red");
+        });
+    </script>
+</body>
+</html>
