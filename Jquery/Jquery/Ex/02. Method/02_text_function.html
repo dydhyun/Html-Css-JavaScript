@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .red{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <p class="txt1">
+        text() 메소드는 <span class="red">순수 자바스크립트의 textContent</span>와 매핑된 메소드.
+    </p>
+    <p class="txt2">
+        text() 메소드는 <span class="red">순수 자바스크립트의 textContent</span>와 매핑된 메소드.
+    </p>
+    <button type="button" id="btn">변경</button>
+
+    <script>
+        $(() => {
+            // 1. text() 메소드 : 순수 자바스크립트의 textContent와 매핑된 함수
+            // 매개변수 없이 text() 메소드를 사용하면 선택된 태그의 하위 태그 포함 모든 텍스트들 리턴
+            // 매개변수를 추가하여 text("새로운 문자열") 메소드를 사용하면 선택된 태그의
+            // 모든 하위 태그를 삭제하고 매개변수로 주어진 문자열을 텍스트로 추가한다.
+            // 매개변수로 태그를 문자열로 전달해도 태그로 인식되지 않고 텍스트로 인식한다.
+            console.log($(".txt1").text());
+            console.log(document.querySelector(".txt1").textContent);// 빈칸,엔터값 모두 출력
+            
+            console.log(document.querySelector(".txt1").innerText);// 빈칸,엔터값 출력 안함
+
+            $("#btn").on("click", (e) => {
+                // $(".txt2").text("<span>text() 메소드에서 매개변수로 전달되는 태그는 텍스트로 인식된다.</span>");
+                document.querySelector(".txt2").textContent = 
+                    "<span>text() 메소드에서 매개변수로 전달되는 태그는 텍스트로 인식된다.</span>";
+            
+            })
+
+        });
+    </script>
+</body>
+</html>

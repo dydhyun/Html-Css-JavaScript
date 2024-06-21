@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-size: 9pt;
+        }
+
+        #panel {
+            width: 600px;
+            height: 300px;
+            border: 1px solid #999;
+            position: relative;
+        }
+
+        #bar {
+            position: absolute;
+            left: 50px;
+            top: 190px;
+            width: 500px;
+            height: 20px;
+            background: red;
+        }
+
+        #fish {
+            position: absolute;
+            left: 50px;
+            top: 120px;
+        }
+
+        #nav {
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="panel">
+            <div id="bar"></div>
+            <img src="images/fish1.png" alt="물고기" id="fish">
+        </div>
+        <div id="nav">
+            <button type="button" id="btn-start">시작</button>
+            <button type="button" id="btn-stop">멈춤</button>
+        </div>
+    </div>
+    <script>
+        $(() => {
+            // 시작버튼을 클릭하면 300ms마다 오른쪽으로 50px씩 이동
+            // left 값이 430px보다 커지면 이미지를 fish2로 변경하고 왼쪽으로 50px씩 이동
+            // left 값이 50px보다 작아지면 이미지를 fish1로 변경하고 오른쪽으로 50px씩 이동
+            let interval;
+            let isDirectionChanged = false;
+            let step = 50;
+
+            $("#btn-start").on("click", (e) => {
+                interval = setInterval(() => {
+                    const currentLeft = $("#fish").position().left;
+
+                    // 1. boolean 값 이용
+                    // if(!isDirectionChanged) {
+                    //     if(currentLeft > 430) {
+                    //         isDirectionChanged = true;
+                    //         $("#fish").attr("src", "images/fish2.png");
+                    //         return;
+                    //     }
+
+                    //     $("#fish").css("left", currentLeft + 50);
+                    // } else {
+                    //     if(currentLeft < 50) {
+                    //         isDirectionChanged = false;
+                    //         $("#fish").attr("src", "images/fish1.png");
+                    //         return;
+                    //     }
+
+                    //     $("#fish").css("left", currentLeft - 50);
+                    // }
+
+
+                    // 2. step 값을 이용
+                    if(currentLeft > 430) {
+                        step = -50;
+                        $("#fish").attr("src", "images/fish2.png");
+                    }
+
+                    if(currentLeft < 50) {
+                        step = 50;
+                        $("#fish").attr("src", "images/fish1.png");
+                    }
+
+                    $("#fish").css("left", currentLeft + step);
+                }, 300);
+            });
+
+
+            // 멈춤버튼을 클릭하면 물고기 이동을 멈춤
+            $("#btn-stop").on("click", (e) => {
+                clearInterval(interval);
+            });
+        });
+    </script>
+</body>
+</html>

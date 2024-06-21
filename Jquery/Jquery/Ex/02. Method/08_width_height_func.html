@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width()/height() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(() => { // DOM객체가 모두 로드 되면
+        // 1. width()/height() 메소드 : 선택형 태그의 가로길이/세로길이를 가져오거나 변경하는 메소드
+        // 매개변수 없이 width()/height() 메소드 사용하면, 현재 지정된 가로/세로 길이를 리턴
+        // 매개변수 넣어서 width("새로운 width 값")/height("새로운 height 값") 메소드 사용하면,
+        // 매개변수로 지정된 값으로 width/height를 변경한다.
+        // 매개변수로 지정할 때는 단위로 포함한 문자열로 지정해도 되고,
+        // 숫자값만 줘도 된다( 자동으로 px 붙어서 px단위로 지정됨 )
+        
+        // 단위를 제외한 수치를 number 타입으로 반환
+        console.log(`변경 전 가로 길이: ${$(".box").width()}`);
+        console.log(`변경 전 세로 길이: ${$(".box").height()}`);
+        console.log(typeof $(".box").width());
+        console.log(typeof $(".box").height());
+
+        const obj = {
+            a: "3",
+            b: 3
+        }
+        console.log(obj);
+
+        const timeout = setTimeout(() => {
+            $(".box").width("300px").height(300);
+
+            console.log(`변경 후 가로 길이: ${$(".box").width()}`);
+            console.log(`변경 후 세로 길이: ${$(".box").height()}`);
+        }, 3000);
+        
+    });
+    </script>
+</body>
+</html>

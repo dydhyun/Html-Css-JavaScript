@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hasClass() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .red {
+            background: red;
+            border: 3px dotted black;
+        }
+
+        .green {
+            background: green;
+            border: 5px dashed black;
+        }
+
+        .blue {
+            background: blue;
+            border: 10px double black;
+        }
+
+        .redTxt {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p>toggleClass() 메소드는 addClass() 메소드와 removeClass() 메소드가 합쳐진 메소드입니다.</p>
+    <script>
+        $(() => {
+            const interval = setInterval(() => {
+                // 1. hasClass("클래스 명") 메소드: 선택된 태그가 매개변수로 주어진
+                // 클래스를 소유하고 있으면 true를 리턴하고 소유하고 있지 않으면 false를 리턴하는 메소드
+                if(!$(".box").hasClass("red") && !$(".box").hasClass("green") && !$(".box").hasClass("blue")) {
+                    $(".box").addClass("red");
+                    return;
+                } 
+
+                if($(".box").hasClass("red")) {
+                    $(".box").removeClass("red")
+                             .addClass("green");
+
+                    return;
+                }
+
+                if($(".box").hasClass("green")) {
+                    $(".box").removeClass("green")
+                             .addClass("blue");
+
+                    return;
+                }
+
+                if($(".box").hasClass("blue")) {
+                    $(".box").removeClass("blue")
+                             .addClass("red");
+
+                    return;
+                }
+                
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

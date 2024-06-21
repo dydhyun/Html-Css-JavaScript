@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        선택된 태그 하위 태그를 모두삭제하는 empty() ,
+         선택된 태그를 삭제하는 remove()
+        </title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>공지사항</td>
+                <td>관리자</td>
+            </tr>
+        </tbody>
+    </table>
+    <table id="tbl2">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>공지사항</td>
+                <td>관리자</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(() => {
+            const timeout = setTimeout(() =>{
+                // 1.empty() : 선택된 태그의 모든 하위태그를 삭제
+                $("#tbl1").empty();
+
+                // 2. remove() : 선택된 태그를 삭제하는 메소드
+                $("#tbl2").remove();
+
+            },2000);
+        });
+    </script>
+</body>
+</html>

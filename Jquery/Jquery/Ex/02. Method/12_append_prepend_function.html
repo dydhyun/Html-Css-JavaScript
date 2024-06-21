@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        선택된 태그 하위 태그의 첫 번째, 마지막 태그를 추가하는
+        prepend() / prependTo() / apend() / apendTo()
+    </title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>공지사항</td>
+                <td>관리자</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(() => {
+           // 1. 선택자.prepend("태그 문자열"), ("태그 문자열").prependTo("선택자"):
+           //   선택된 태그의 하위 첫 번째 태그로 새로운 태그를 추가해 준다. 
+           $("tbody").prepend(`
+            <tr>
+                <td>0</td>
+                <td>인사말</td>
+                <td>관리자</td>
+            </tr>
+           `);
+           $(`
+            <tr>
+                <td>-1</td>
+                <td>테스트</td>
+                <td>관리자</td>
+            </tr>
+           `).prependTo("tbody");
+
+           // 1. 선택자.apend("태그 문자열"), ("태그 문자열").apendTo("선택자"):
+           //   선택된 태그의 하위 첫 번째 태그로 새로운 태그를 추가해 준다. 
+           $("tbody").append(`
+            <tr>
+                <td>2</td>
+                <td>가입인사</td>
+                <td>안용현</td>
+            </tr>
+           `);
+           $(`
+            <tr>
+                <td>3</td>
+                <td>문의사항</td>
+                <td>안용현</td>
+            </tr>
+           `).appendTo("tbody");
+        });
+    </script>
+</body>
+</html>

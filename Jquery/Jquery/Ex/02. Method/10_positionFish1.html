@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        body{
+            font-size: 9pt;
+        }
+        #pannel{
+            width: 600px;
+            height: 300px;
+            border: 1px solid grey;
+            position: relative;
+        }
+        #bar{
+            position: absolute;
+            left: 50px;
+            top: 190px;
+            width: 500px;
+            height: 20px;
+            background: red;
+        }
+        #fish{
+            position: absolute;
+            left: 50px;
+            top: 120px;
+        }
+        #nav{
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="pannel">
+            <div id="bar"></div>
+            <img src="images/fish1.png" alt="물고기1" id="fish">
+        </div>
+        <div id="nav">
+            <button type="button" id="btn-start">시작</button>
+            <button type="button" id="btn-stop">정지</button>
+        </div>
+    </div>
+    <script>
+        $(() => {
+           
+           // 시작버튼을 클릭하면 300ms 마다 오른쪽으로 50px 씩 이동.(left가 50px씩 증가
+           // left 값이 430px 보다 커지면 이미지를 fish2로 변경하고, 왼쪽으로 50px 씩 이동
+           // left 값이 50px 보다 작아지면 이미지를 fish1로 변경후 오른쪽으로 50px 씩 이동
+            $("#btn-start").on("click", (e) => {
+                
+                // const left = $("#fish").attr("src") left
+                // const right = $("#fish").attr("src") right
+
+                const interval = setInterval(() => {
+
+                    if( $("#fish").attr("src") == "images/fish1.png" ){
+                        $("#fish").css("left",$("#fish").position().left + 50);
+                        if( $("#fish").position().left >= 430 ){
+                            $("#fish").attr("src","images/fish2.png");
+                        }
+                    }
+
+                    else if( $("#fish").attr("src") == "images/fish2.png" ){
+                        $("#fish").css("left",$("#fish").position().left - 50);
+                        if( $("#fish").position().left <= 50 ){
+                            $("#fish").attr("src","images/fish1.png");
+                        }
+                    }
+                },300);
+
+                
+                // 멈춤버튼을 누르면 물고기의 이동을 멈춤
+                $("#btn-stop").on("click", (e) => {
+                        clearInterval(interval);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

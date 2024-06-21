@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addClass() / removeClass() / toggleClass() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .red{
+            background: red;
+            border: 3px dotted black;
+        }
+        .green{
+            background: green;
+            border: 5px dashed black;
+        }
+        .blue{
+            background: blue;
+            border: 10px double black;
+        }
+        .redTxt{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p>toggleClass() 메소드는 addClass() 메소드와 removeClass() 메소드가 합쳐진 메소드다.</p>
+
+    <script>
+        $(() => {
+           let cnt = 0;
+           const interval = setInterval(() => {
+                // 1. addClass("클래스 명") : 선택된 태그에 매개변수로 주어진 클래스를 추가
+                // 2. removeClass("클래스 명") : 선택된 태그에서 매개변수로 주어진 클래스를 삭제
+                if(cnt % 3 == 0){
+                    $(".box").addClass("red").removeClass("green").removeClass("blue");
+                } else if(cnt % 3 == 1){
+                    $(".box").addClass("green").removeClass("blue").removeClass("red");
+                } else {
+                    $(".box").addClass("blue").removeClass("red").removeClass("green");
+                }
+                cnt ++;
+
+                // 3. toggleClass("클래스 명") : 선택된 태그에
+                // 매개변수로 주어진 클래스가 존재하면, 삭제하고 존재 않으면 추가하는 메소드.
+                $("p").toggleClass("redTxt");
+           }, 1000); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택된 태그 앞뒤에 태그를 추가하는 before()/insertBefore()/after()/insertAfter()</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li id="content">Html/Css</li>
+    </ul>
+    
+    <script>
+        $(() => {
+            // 1. 선택자.before("태그 문자열") , $("태그 문자열").insertBefore()
+            // : 선택된 태그 앞에 형제 태그로 새로운 태그를 생성
+            // insertBefore의 선택자는 css 선택자
+            $("#content").before("<li>Java</li>");
+            $("<li>Oracle</li>").insertBefore("#content");
+
+            // 2. 선택자.after("태그 문자열") , $("태그 문자열").insertAfter()
+            // : 선택된 태그 앞에 형제 태그로 새로운 태그를 생성
+            // insertAfter의 선택자는 css 선택자
+            $("#content").after("<li>JavaScript</li>");
+            $("<li>Jquery</li>").insertAfter("#content");
+            
+        });
+    </script>
+</body>
+</html>

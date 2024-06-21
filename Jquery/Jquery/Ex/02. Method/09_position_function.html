@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        $(() => {
+            // 1. position() 메소드: 선택된 태그의 현재 지정된 left|top|right|bottom 값을 리턴
+            console.log(`변경 전 top: ${$(".box").position().top}`);
+            console.log(`변경 전 left: ${$(".box").position().left}`);
+
+            // left|right|top|bottom 값의 변경은 css() 메소드를 사용한다.
+            const timeout = setTimeout(() => {
+                $(".box").css("top", 300)
+                         .css("left", "300px");
+
+                console.log(`변경 후 top: ${$(".box").position().top}`);
+                console.log(`변경 후 left: ${$(".box").position().left}`);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

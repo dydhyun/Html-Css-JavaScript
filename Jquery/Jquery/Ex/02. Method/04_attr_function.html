@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() 메소드/removeAttr() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="https://www.naver.com">네이버</a></li>
+        <li><a href="https://www.google.com">구글</a></li>
+        <li><a href="https://www.daum.net">다음</a></li>
+    </ul>
+    <button type="button" id="btn">링크 삭제</button>
+    <script>
+        $(() => {
+            // 1. attr() 메소드: 순수 자바스크립트의 getAttribute()/setAttribute() 메소드와 매핑된 메소드
+            // 매개변수 하나로 attr("속성 이름") 메소드를 사용하면 속성 이름에 지정된 속성값을 리턴
+            // 매개변수 두개로 attr("속성 이름", "속성 값") 메소드를 사용하면 속성 이름의 속성 값을 변경/추가
+            console.log($("ul a").first().attr("href"));
+            console.log(document.querySelector("ul a:first-child"));
+            console.log(document.querySelector("ul a:first-child").getAttribute("href"));
+            console.log(document.querySelector("a[href='https://www.naver.com']").getAttribute("href"));
+
+            let isChanged = false;
+
+            const interval = setInterval(() => {
+                isChanged = !isChanged;
+
+                if(isChanged) {
+                    $("a[href='https://www.daum.net']")
+                            // 기존에 존재하던 href 속성 값 변경
+                            .attr("href", "https://www.bitcamp.co.kr")
+                            // 기존에 존재하지 않던 id 속성 값 추가
+                            .attr("id", "bitcamp")
+                            .text("비트캠프");
+                    return;
+                }
+
+                $("a[href='https://www.bitcamp.co.kr']")
+                            .attr("href", "https://www.daum.net")
+                            // removeAttr("속성") : 선택된 태그에서 속성 삭제
+                            .removeAttr("id")
+                            .text("다음");
+
+            }, 5000);// 5초마다 이벤트 발생
+            
+            $("#btn").on("click", (e) => {
+                $("a[href = 'https://www.google.com']")
+                .removeAttr("href");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is, each fucntion</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h3>메뉴</h3>
+    <label><input type="checkbox" name="food" value="치킨">치킨</label>
+    <label><input type="checkbox" name="food" value="삼겹살">삼겹살</label>
+    <label><input type="checkbox" name="food" value="김밥">김밥</label>
+    <label><input type="checkbox" name="food" value="피자">피자</label>
+    <label><input type="checkbox" name="food" value="햄버거">햄버거</label>
+    <label><input type="checkbox" name="food" value="초밥">초밥</label>
+    <label><input type="checkbox" name="food" value="파스타">파스타</label>
+    <label><input type="checkbox" name="food" value="냉면">냉면</label>
+    <label><input type="checkbox" name="food" value="족발">족발</label>
+    <button type="button" id="btn">주문하기</button>
+    <script>
+        $(() => {
+           $("#btn").on("click", (e) => {
+            const orderList =[];
+            
+            // 1. each() 메소드 : 선택된 태그들을 하나 씩 순회하면서 콜백함수를 한 번씩 실행
+            // 선택자.each(콜백함수);
+            // $.each(선택자, 콜백함수); 두 방법으로 사용 가능하다.
+            $("input[name='food']").each(function() {
+                //$(this) : 현재 선택된 태그를 this 객체로 받아올 수 있다.
+                console.log($(this));
+
+                // 2. is() 메소드 : 특정 태그의 상태를 검사하는 메소드(true, false 리턴)
+                // 매개변수로 가상클래스를 이용한다.
+                // input[name='food'] 중에 체크 된 체크박스만 조건문에 걸린다.
+                if($(this).is(":checked")){
+                    orderList.push($(this).val());
+                }
+            });
+            
+            console.log(orderList);
+            alert(`${orderList}이(가) 주문되었습니다.`);
+           });
+        });
+        // $(() => {
+        //     $("label input[type='checkbox']").on("click", (e) => {
+        //         $("input[type='checkbox']").each(function(){
+
+        //             if($(this).is(":checked")) {
+        //                 $(this).parent().css("background", "green");
+        //             }
+        //             else{
+        //                 $(this).parent().css("background", "none");
+        //             }
+        //         });
+        //     });
+        // });
+
+        $(() => {
+            $("label input[type='checkbox']").on("click", function(){
+                
+                if($(this).is(":checked")) {
+                        $(this).parent().css("background", "green")
+                        .css("border","1px dotted black");
+                        return;
+                    }           
+                $(this).parent().css("background", "none").css("border", "");
+            });
+        });
+    </script>
+</body>
+</html>

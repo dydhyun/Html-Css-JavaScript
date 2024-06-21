@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 탐색 선택자</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com" title="google">구글</a>
+    <a href="https://www.daum.net">다음</a>
+    <script>
+        $(() => {
+            // 1. 속성 탐색 선택자
+            // 해당 태그에 있는 속성과 속성값들을 통해 태그를 선택할 수 있는 선택자
+            // a태그 중 title 속성을 가지고 있는 태그 선택
+            $("a[title]").css("background", "yellow");
+
+            // a태그 중 href 속성의 값이 https://www.daum.net인 태그 선택
+            $("a[href='https://www.daum.net']").css("background", "red");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <ul class="list1">
+        <li>Html</li>
+        <li>Css</li>
+        <li>Jquery</li>
+    </ul>
+    <ul class="list2">
+        <li>Html</li>
+        <li>Css</li>
+        <li>Jquery</li>
+    </ul>
+    <button type="button" id="btn">변경</button>
+    <script>
+        $(() => {
+            // 1. html() 메소드: 순수 자바스크립트의 innerHtml과 매핑되는 메소드
+            // 매개변수가 없이 html()메소드를 사용하면 선택된 태그의 모든 하위 태그를 문자열로 리턴
+            // 매개변수를 추가하여 html("새로운 태그 문자열")을 사용하면
+            // 선택된 태그의 모든 하위 태그를 삭제하고 매개변수로 주어진 태그를 하위 태그로 생성한다.
+            console.log($(".list1").html());
+            // ==
+            console.log(document.querySelector(".list1").innerHTML);
+            // 변경 버튼 클릭 시 .list2의 내용을 Java, Oracle, JavaScript, Spring 으로 변경
+            $("#btn").on("click", (e)=>{
+                // $(".list2")
+                // .html(`
+                // <li>Java</li>
+                // <li>Oracle</li>
+                // <li>JavaScript</li>
+                // <li>Spring</li>`);
+                document.querySelector(".list2")
+                .innerHTML=
+                `<li>Java2</li>
+                <li>Oracle</li>
+                <li>JavaScript</li>
+                <li>Spring2</li>`;
+            });
+        });
+    </script>
+</body>
+</html>
