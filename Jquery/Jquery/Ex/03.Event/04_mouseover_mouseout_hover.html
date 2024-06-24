@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 커서가 올라갔을 때 동작하는 mouseover()/
+        마우스 커서가 빠져나갔을 떄 동작하는 mouseout()/
+        mouseover와 mouseout을 합쳐놓은 hover() 이벤트
+    </title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        #box1 {
+            background: green;
+        }
+
+        #box2 {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <script>
+        $(() => {
+            $("#box1").mouseover(() => {
+                $("#box1").css("background", "blue");
+            });
+
+            $("#box1").on("mouseout", () => {
+                $("#box1").css("background", "green");
+            });
+
+            $("#box2").hover(
+                // mouseover일 때 콜백함수
+                () => {
+                    $("#box2").css("border", "5px dotted red");
+                },
+                // mouseout일 때 콜백함수
+                () => {
+                    $("#box2").css("border", "none");
+                }
+            );
+
+            // mouseover, mouseout 강제 이벤트
+            let isMouseOver = false;
+
+            let interval = setInterval(() => {
+                isMouseOver = !isMouseOver;
+
+                if(isMouseOver) {
+                    $("#box1").mouseover();
+                    return;
+                }
+
+                $("#box1").trigger("mouseout");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

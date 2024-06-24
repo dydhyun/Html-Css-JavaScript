@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery의 그룹 이벤트 등록</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <script>
+        $(() => {
+            // 1. 다른 이벤트에 동일한 동작 생성
+            // contextmenu: 마우스 우클릭 이벤트
+            $("#box1").on("click contextmenu", (e) => {
+                e.preventDefault();
+                $("#box1").css("background", "blue");
+            });
+
+            // 2. e객체의 type 속성을 통해서
+            // 각각 이벤트가 다르게 동작하도록 설정할 수 있다.
+            $("#box2").on("click dblclick contextmenu mouseover mouseout", (e) => {
+               switch(e.type){
+                
+                    case "click":{
+                        $("#box2").css("border", "1px dotted red");
+                        break;
+                    }
+                    case "dblclick":{
+                        $("#box2").css("border", "2px dashed green");
+                        break;
+                    }
+                    case "contextmenu":{
+                        $("#box2").css("border", "5px double blue");
+                        break;
+                    }
+                    case "mouseover":{
+                        $("#box2").css("border", "20px solid magenta");
+                        break;
+                    }
+                    default:{
+                        $("#box2").css("border", "20px solid cyan");
+                    }
+                
+               } 
+            });
+
+            // 3. on 메소드에 이벤트와 콜백함수가 매핑된 JavaScript 객체를 매개변수로 전달해서
+            // 여러개의 이벤트를 한 번에 생성할 수 있다.
+            $("#box3").on({
+                "click":(e) => {
+                    $("#box3").css("width", "200px");
+                    $("#box3").css("height", "200px");
+                },
+                dblclick:(e) => {
+                    $("#box3").css("width", "300px");
+                    $("#box3").css("height", "300px");
+                },
+                "contextmenu":(e) => {
+                    $("#box3").css("width", "100px");
+                    $("#box3").css("height", "100px");
+                }
+            });
+
+            
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wrap()/unwrap()/wrapAll()/wrapInner() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="text-area">
+    <p class="txt1">unwrap은 선택된 태그의 부모태그를 삭제한다.</p>
+    <p class="txt1">unwrap은 선택된 태그의 부모태그를 삭제한다.</p>
+    </div>
+    <p class="txt1">wrap은 선택된 태그들을 각각 새로운 부모태그로 감싼다.</p>
+    <p class="txt1">wrapAll은 선택된 태그들을 하나의 부모태그로 감싼다.</p>
+    <p class="txt1">wrapInner는 선택된 태그의 하위 태그들을 새로운 부모태그로 한번 더 감싼다.</p>
+    
+    <script>
+        $(() => {
+            // 1. unwrap() 메소드 : 선택된 태그의 부모태그 삭제
+            // $(".txt1").unwrap(); // text-area class의 div가 지워진다.
+            
+            // 2. wrap("새 태그") : 선택된 태그들을 매개변수로 주어진 새 태그로 각각 감싼다.
+            // $("body p").wrap("<div></div>"); // == $("body p").wrap("<div/>");
+
+            // 3. wrapAll("새 태그") : 선택된 태그들을 매개변수로 주어진 새태그 하나로 감싼다.
+            $("body>p").wrapAll("<div/>");
+
+            // 4. wrapInner("새 태그") : 선택된 태그의 하위태그들을 새 태그 하나로 감싼다.
+            $(".text-area").wrapInner("<strong/>");
+        });
+    </script>
+</body>
+</html>

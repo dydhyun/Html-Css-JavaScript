@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 이벤트 keydown()/keyup()/keypress()</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <input type="text" id="input1">
+    </div>
+    <div>
+        <input type="text" id="input2">
+    </div>
+    <script>
+        $(() => {
+            // 1. keydown 이벤트
+            // 키가 눌려졌을 때 동작하는 이벤트로 keypress 기본적으로 동일하게 동작한다.
+            // keydown 물리적으로 어떤 키가 눌렸는지에 관심이 있다.
+            // 대소문자 구문이 없다.
+            $("#input1").on("keydown", (e) => {
+                console.log(`keydown ====> ${e.keyCode}`);
+            });
+
+            // 2. keypress 이벤트
+            // 키가 눌려졌을 때 동작하는 이벤트로 keydown 기본적으로 동일하게 동작한다.
+            // 실제 어떤 키가 눌렸는지에 관심이 있다.
+            // 대소문자 구분된다. // 기능키 shift/alt/ctr 잡지않음
+            $("#input1").on("keypress", (e) => {
+                console.log(`keypress ====> ${e.keyCode}`);
+            });
+
+            // 3. keyup 이벤트
+            // 키보드에서 손을 때었을 때 동작하는 이벤트로
+            // keydown 과 마찬가지로 물리적으로 어떤 키가 눌렸는 지에 관심이 있다. 기능키눌러도 동작
+            // 대 소문자 구분이 되지 않는다.
+            $("#input2").keyup((e) => {
+                console.log(`keyup ===> ${e.keyCode}`);
+            })
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특정 태그에 포커스가 갔을 때 발생하는 focus()/
+        특정 태그에서 포커스가 빠져나갔을 때 발생하는 blur()/
+        input 태그의 value값이 변경되고 포커스가 빠져나갔을 때 발생하는 change() 이벤트
+    </title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label>아이디
+                <input type="text" id="username" name="username">
+            </label>
+        </div>
+        <div>
+            <label>비밀번호
+                <input type="password" id="password" name="password">
+            </label>
+        </div>
+        <div>
+            <label>비밀번호 확인
+                <input type="password" id="passwordChk" name="passwordChk">
+            </label>
+        </div>
+    </form>
+    <script>
+        $(() => {
+            // 1. focus 이벤트 매핑
+            $("#username").focus((e) => {
+                $("#username").css("background", "blue");
+            });
+
+            // 2. blur 이벤트 매핑
+            $("#username").on("blur", (e) => {
+                $("#username").css("background", "white");
+            });
+
+            // 3. change 이벤트 매핑
+            // blur 이벤트와 비슷하지만 input 태그의 value 값이 변경되지 않으면 동작하지 않는다.
+            $("#password").change((e) => {
+                if($("#password").val().length < 8) {
+                    alert("비밀번호는 8자리 이상으로 지정해 주세요.");
+                    // 4. focus 강제이벤트 발생
+                    $("#password").focus();
+                }
+            });
+
+            // 4. passwordChk의 형제태그로 p태그 만들어서 블러 이벤트 만들기
+            $("#passwordChk").on("blur", (e) => {
+                if($("#passwordChk").val() != $("#password").val()){
+                    $("#passwordChk").after(`<p class="txt" style="color:red;">비밀번호가 일치하지 않습니다.</p>`);
+                    return;
+                }
+                $(".txt").remove();
+                
+            });
+        });
+    </script>
+</body>
+</html>

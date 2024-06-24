@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 효과를 만들어 주는 animate() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        
+        #box1 {
+            background: red;
+        }
+        
+        #box2 {
+            background: green;
+        }
+
+        #box3 {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <script>
+        $(() => {
+            // 1. animate({속성: 속성값들}, 애니메이션 지속시간, 콜백함수) :
+            // 지정된 속성들을 변경하는 애니메이션 효과를 만들어주는 메소드.
+            // 색상관련된 애니메이션은 만들 수 없다. 수치관련 애니메이션을 만들 수 있다.
+            // $("#box1").animate({
+            //     width:"200px",
+            //     height:"200px"
+            // }, 3000, () => {
+            //     alert("#box1 확대 완료."); // 애니메이션 효과가 끝나면 콜백함수가 실행된다.
+            // });
+
+
+            // // 2. animate 메소드는 체이닝 기법으로 여러개의 애니메이션 효과를 만들 수 있다.
+            // // 처음에 지정한 애니메이션부터 하나 씩 순차적으로 지정이 된다.
+            // $("#box2").animate({
+            //     opacity:0.3
+            // }, 1000, () => {
+            //     alert("투명도 0.3 변경완료.");
+            // }).animate({
+            //     opacity:1
+            // }, 1000, () =>{
+            //     alert("투명도 1 복구완료.");
+            // });
+
+
+            // 3. box3을 각 2 초동안 marginLeft를 250px로 변경했다가. 다시 100px로 변경해보자
+            $("#box3").animate({
+                marginLeft:"250px"
+            }, 2000).animate({marginLeft:"100px"},2000)
+            .animate({marginLeft:400},2000)
+            .animate({marginLeft:20},1000, ()=>{
+                $("#box3").animate({marginLeft:250},2000).animate({marginLeft:"100px"},2000);
+            });
+            
+
+        });
+    </script>
+</body>
+</html>

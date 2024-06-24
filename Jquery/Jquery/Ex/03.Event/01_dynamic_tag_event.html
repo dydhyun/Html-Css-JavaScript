@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic태그의 이벤트 할당</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="txt"></p>
+    <script>
+        $(() => {
+            let cnt = 0;
+            
+            // // **1-1 이벤트가 태그보다 먼저 등록되면 제대로 동작을 하지 않는다.**
+            // 동적태그 등록 이후로 이벤트 등록하면 사용가능.(1-3)
+            // $("#btn").on("click", (e) => {
+            //    $("#txt").text(`${++cnt}회 클릭`); 
+            // });
+
+            // 1-2 동적 태그의 이벤트 등록 방식
+            // $(document).on(이벤트, 선택자, 콜백함수)
+            // $(document).on("click", "#btn", (e) => {
+            //     $("#txt").text(`${++cnt}회 클릭`);
+            // });
+
+
+            // 동적 태그 등록
+            // 원래 웹 문서에 존재하지 않는 태그를 생성하는 것을 동적 태그 생성이라고 한다.
+            let str = `<button type="button" id="btn">클릭</button>`;
+            
+            $("#txt").after(str);
+            
+            // 1-3 동적 태그가 등록된 이후에는 기존방식의 이벤트 등록방식을 사용해도 제대로 동작한다.
+            $("#btn").on("click", (e) => {
+               $("#txt").text(`${++cnt}회 클릭`); 
+            });
+
+
+        });
+    </script>
+</body>
+</html>

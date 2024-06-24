@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click()/dblclick() 이벤트</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="click">클릭</button>
+    <button type="button" id="dblclick">더블클릭</button>
+    <script>
+        $(() => {
+            const colorArr = ['red', 'green', 'blue', 'orange', 'violet'];
+
+            let idx = -1;
+
+            // 1. 이벤트 등록방식1
+            // 이벤트 메소드에 매개변수로 콜백함수를 전달해 이벤트 발생시 콜백함수 실행되도록 한다.
+            // 선택자.click|dblclick(콜백함수)
+            $("#click").click((e) => {
+                $(".box").css("background", colorArr[++idx]);
+                if(idx == 4) idx = -1;
+            });
+
+            // 2. 이벤트 등록방식2
+            // on 메소드를 이용해서 이벤트와 콜백함수를 매개변수로 전달한다.
+            // 선택자.on("이벤트(click||dblclick)", 콜백함수)
+            $("#dblclick").on("dblclick", (e) => {
+                $(".box").css("background", colorArr[--idx]);
+                if(idx < 0) idx = 5;
+            });
+
+            // 3. 강제 이벤트 발생
+            // 1 초 마다 #click 버튼의 클릭 이벤틀가 발생하는것 처럼 만들기
+            let interval = setInterval(() => {
+                // 3-1 강제 이벤트 발생1
+                //매개변수 없이 이벤트 메소드 호출
+                // $("#click").click();
+
+                // 3-2 강제 이벤트 발생2
+                // trigger("이벤트") 메소드 사용
+                $("#dblclick").trigger("dblclick");
+            },500)
+        });
+    </script>
+</body>
+</html>

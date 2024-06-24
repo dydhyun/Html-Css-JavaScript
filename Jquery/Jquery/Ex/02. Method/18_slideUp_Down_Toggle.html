@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그를 접히는 효과로 숨기거나 펼쳐지는 효과로 표출하는 slideUp()/slideDown()/slideToggle() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="hide">숨기기</button>
+    <button type="button" id="show">보이기</button>
+    <button type="button" id="toggle">토글</button>
+
+    <script>
+        $(() => {
+            $("#hide").on("click", (e) => {
+                // 1. slideUp(시간, 콜백함수) : 지정한 시간동안 태그를 접히는 효과로 숨긴다.
+                // 결국 마지막에는 display : none; 으로 변경된다.
+                
+                $(".box").slideUp(2000, () => {
+                    alert("숨김완료");
+                });
+            });
+            
+
+            $("#show").on("click", (e) => {
+                // 2. slideDown(시간, 콜백함수) : 지정된 시간동안 태그를 아래로 펼쳐지는 효과로 표출한다.
+                
+                $(".box").slideDown(2000, () => {
+                    alert("표출완료");
+                });
+            });
+
+
+            $("#toggle").on("click", (e) => {
+                // 3. slideToggle(시간, 콜백함수) : 표출되어 있으면 접는효과로 태그를 숨기고,
+                //  접혀 있으면 태그를 표출한다.
+                $(".box").slideToggle(2000, (e) => {
+                    if($(".box").css("display") == "none"){
+                        alert("숨김완료");
+                        return;
+                    }
+                    alert("표출완료");
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>

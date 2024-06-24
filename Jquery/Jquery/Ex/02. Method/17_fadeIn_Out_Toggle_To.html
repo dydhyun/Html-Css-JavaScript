@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투명도를 조절해서 태그를 숨기거나 표출하는 fadeIn()/fadeOut()/fadeToggle() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button type="button" id="hide">숨기기</button>
+    <button type="button" id="show">보이기</button>
+    <button type="button" id="toggle">토글</button>
+    <button type="button" id="fadeTo">페이드투</button>
+    
+    <script>
+        $(() => {
+            $("#hide").on("click", (e) => {
+                // 1. fadeout(시간, 콜백함수) : 지정한 시간동안 태그를 서서히 투명하게 만든다.
+                // 결국 마지막에는 display : none; 으로 변경된다.
+                // $(".box").fadeOut(2000, () => {
+                //     alert("숨김완료(투명도0)"); // opacity <= 0 이후 display:none으로 진행
+                // });
+                $(".box").fadeOut(); // 빠르게 투명도가 변하며 display:none.
+            });
+            
+
+            $("#show").on("click", (e) => {
+                // 2. fadeIn(시간, 콜백함수) : 지정된 시간동안 태그를 서서히 짙게 만든다.
+                // 투명도가 1이 되면 콜백함수가 실행된다.
+                // $(".box").fadeIn(2000, () => {
+                //     alert("투명도 1");
+                // })
+                $(".box").fadeIn();
+            });
+
+
+            $("#toggle").on("click", (e) => {
+                // 3. fadeToggle(시간, 콜백함수) : 표출되어 있으면 투명도를 서서히 0으로 변경하고,
+                //  숨겨져 있으면 투명도를 서서히 1 로 변경한다.
+                $(".box").fadeToggle(2000, (e) => {
+                    if($(".box").css("display") == "none"){
+                        alert("숨김완료");
+                        return;
+                    }
+                    alert("표출완료");
+                });
+            });
+            
+
+            $("#fadeTo").on("click", (e) => {
+                // 4. fadeTo(시간, 투명도, 콜백함수) : 지정한 시간동안 서서히 매개변수로 전달한 투명도로 변경
+                    $(".box").fadeTo(2000, 0.4, () => {
+                        alert("투명도 0.4 변경완료");
+                    });
+            });
+
+        });
+    </script>
+</body>
+</html>

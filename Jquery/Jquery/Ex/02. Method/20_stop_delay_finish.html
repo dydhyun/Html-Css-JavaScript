@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 효과를 조작하는 stop()/delay()/finish() 메소드</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        
+        #box1 {
+            background: red;
+        }
+        
+        #box2 {
+            background: green;
+        }
+
+        #box3 {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <button type="button" id="btn1">중단</button>
+    <button type="button" id="btn2">종료</button>
+
+    <script>
+        $(() => {
+            // 1. delay(시간): 지정한 시간 후에 애니메이션 효과를 시작할 수 있도록 지연시켜주는 메소드
+            // $("#box1").delay(2000).animate({
+            //     width: "200px",
+            //     height: "200px"
+            // }, 3000, () => {
+            //     alert("#box1 확대완료");
+            // });
+
+            $("#box2").animate({
+                opacity: 0.3
+            }, 3000).animate({
+                opacity: 1
+            }, 3000);
+
+            $("#btn1").on("click", (e) => {
+                // 2. stop(): 애니메이션 효과가 진행되는 중간에 멈춰주는 메소드
+                // box2에 애니메이션 효과가 두 개가 존재하기 때문에
+                // 첫 번째 애니메이션이 중단되고 두 번째 애니메이션이 이어서 진행된다.
+                // 두 개 다 중단하려면 btn1을 두 번 클릭한다.
+                $("#box2").stop();
+            });
+            
+            $("#box3").animate({
+                marginLeft: 250
+            }, 2000)
+            .animate({
+                marginLeft: 100
+            }, 2000);
+
+            $("#btn2").on("click", (e) => {
+                // 3. finish(): 모든 애니메이션 효과를 제거하고 바로 결과를 표출하는 메소드
+                $("#box3").finish();
+            });
+        });
+    </script>
+</body>
+</html>

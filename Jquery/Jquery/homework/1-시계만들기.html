@@ -27,6 +27,38 @@
             현재 시간을 02:03:05처럼 출력되게 만들어 주면 됩니다.
             1초가 지날 때 마다 시간이 바뀌게 구현하면 됩니다.
         */
+        $(() => {
+            const nowTime = new Date();
+            let hour = nowTime.getHours();
+            let minute = nowTime.getMinutes();
+            let second = nowTime.getSeconds();
+
+            $("#clock").text(`${converZeroTime(hour)}:${converZeroTime(minute)}:${converZeroTime(second)}`);
+
+            let inteval = setInterval(() => {
+                second++;
+
+                if(second >= 60) {
+                    minute++;
+                    second = 0;
+                }
+
+                if(minute >= 60) {
+                    hour++;
+                    minute = 0;
+                }
+
+                if(hour >= 24) {
+                    hour = 0;
+                }
+
+                $("#clock").text(`${converZeroTime(hour)}:${converZeroTime(minute)}:${converZeroTime(second)}`);
+            }, 1000);
+        });
+
+        function converZeroTime(time) {
+            return time >= 10 ? time : `0${time}`;
+        }
     </script>
 </body>
 </html>
