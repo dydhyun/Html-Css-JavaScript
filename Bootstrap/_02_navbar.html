@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--.navbar: 네이비게이션 바를 생성하는 클래스-->
+    <!--.navbar-expand: 화면 크기에 따라 네비게이션바를 가로표출할지, 세로표출할지 결정-->
+    <div class="navbar bg-primary fixed-top navbar-expand-lg">
+        <div class="container">
+            <!--.navbar-brand: 회사명이나 네비게이션 바 제목, 홈 버튼 등을 스타일링 하는 클래스-->
+            <a href="#" class="navbar-brand">Home</a>
+            <!--.navbar-toggler: 네비게이션 바에 토글기능을 하는 버튼을 추가-->
+            <!--data-bs-toggle: 컨텐츠를 숨길지 말지를 결정-->
+            <!--data-bs-target: 햄버거 버튼으로 숨길 컨텐츠 영역 매핑(컨텐츠 영역의 id 속성으로)-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-content">
+                <!--.navbar-toggler-icon: 컨텐츠 숨길 시 햄버거 버튼 아이콘 생성-->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--네비게이션 바 컨텐츠 영역-->
+            <div class="collapse navbar-collapse" id="navbar-content">
+                <!--.navbar-nav: 네비게이션 바의 메뉴 컨텐츠 영역-->
+                <!--.me-auto: 좌우 마진 auto로 설정-->
+                <ul class="navbar-nav me-auto">
+                    <!--.nav-item: 네비게이션 바의 메뉴 컨텐츠-->
+                    <!--.dropdown: 드롭다운 목록을 만들어주는 클래스-->
+                    <li class="nav-item dropdown">
+                        <!--.nav-link: 네비게이션 바의 링크를 스타일링해주는 클래스-->
+                        <!--.dropdown-toggle: 드롭다운 목록을 숨겨주는 클래스-->
+                        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">HTML5</a>
+                        <!--.dropdown-menu: 드롭다운 목록 영역 설정-->
+                        <div class="dropdown-menu">
+                            <!--.dropdown-item: 드롭다운 목록의 컨텐트-->
+                            <a href="" class="dropdown-item">Geolaction</a>
+                            <a href="" class="dropdown-item">Drag And Drop</a>
+                            <!--.dropdown-divider: 드롭다운 나눔 줄 추가-->
+                            <div class="dropdown-divider"></div>
+                            <a href="" class="dropdown-item">Motion</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="" class="nav-link">CSS3</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">ECMAScript</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Node.js</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Blueberry</h1>
+        <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 북아메리카 등지에서 품종개량 등을
+            활발하게 한다. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과
+            식물로, 진달래과에 속하는 베리로는 크랜베리, 링곤베리 빌베리 등이 있다.
+        </p>
+        <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 북아메리카 등지에서 품종개량 등을
+            활발하게 한다. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과
+            식물로, 진달래과에 속하는 베리로는 크랜베리, 링곤베리 빌베리 등이 있다.
+        </p>
+        <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 북아메리카 등지에서 품종개량 등을
+            활발하게 한다. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과
+            식물로, 진달래과에 속하는 베리로는 크랜베리, 링곤베리 빌베리 등이 있다.
+        </p>
+        <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 북아메리카 등지에서 품종개량 등을
+            활발하게 한다. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과
+            식물로, 진달래과에 속하는 베리로는 크랜베리, 링곤베리 빌베리 등이 있다.
+        </p>
+    </div>
+</body>
+</html>
